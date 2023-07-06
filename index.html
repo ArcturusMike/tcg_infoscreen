@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TCG Infoscreen</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: orange;
+      font-family: sans-serif;
+      text-align: center;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    h1 {
+      margin: 0;
+      padding: 5px;
+    }
+
+    #h1-links {
+      float: left;
+    }
+
+    #h1-rechts {
+      float: right;
+      font-weight: normal;
+    }
+    
+    .iframe-container {
+      height: calc(100% - 16px);
+      display: flex;
+      padding: 5px;
+      position: relative;
+    }
+
+    #ifc-links {
+      width: 70%;
+    }
+
+    #ifc-rechts {
+      width: 30%;
+    }
+    
+    .iframe-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 2px solid black;
+      border-radius: 5px;
+    }
+
+    .iframe-wrapper {
+      flex: 1;
+      display: flex;
+    }
+
+    #loading-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background-color: black;
+      animation: fill-bar 30s linear infinite;
+    }
+
+    @keyframes fill-bar {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+  </style>
+  <script>
+    // Seite nach gewisser Zeit automatisch neu laden
+    window.setTimeout(function() {
+      window.location.reload();
+    }, 180000);
+    
+    
+    function uhrzeit() {
+      var monate = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
+
+      var today = new Date();
+      var tag = today.getDate();
+      tag = checkTime(tag);
+      var monat = monate[today.getMonth()]
+      var date = tag + ". " + monat;
+
+      var stunden = today.getHours();
+      stunden = checkTime(stunden);
+      var minuten = today.getMinutes();
+      minuten = checkTime(minuten);
+      var sekunden = today.getSeconds();
+      sekunden = checkTime(sekunden);
+      var time = stunden + ":" + minuten + "<span style='font-size: 12pt;'>:" + sekunden + "</span>";
+      var dateTime = date+' &ndash; '+time;
+
+      document.getElementById("h1-rechts").innerHTML = dateTime;
+
+      setTimeout(uhrzeit, 1000);
+    }
+
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+    
+
+    // Wechsel der Seite; von ChatGPT
+    var iframeUrls = [
+      "http://www.tcgoesselsdorf.at#primary",
+      "http://www.tcgoesselsdorf.at/termine#primary",
+      "http://www.tcgoesselsdorf.at/preise#primary"
+    ];
+    var currentIndex = 0;
+    var iframe = null;
+    function rotateIframeSrc() {
+      iframe = iframe || document.getElementById("wechsel-iframe");
+      if (iframe) {
+        iframe.src = iframeUrls[currentIndex];
+        currentIndex = (currentIndex + 1) % iframeUrls.length;
+
+      }
+    }
+  </script>
+</head>
+<body onload="uhrzeit(); rotateIframeSrc()">
+  <div class="container">
+    <h1 id="h1"><span id="h1-links">Viel Spaß! &#127934;&#127934;&#127934;</span><span id="h1-rechts"></span></h1>
+    <div class="iframe-wrapper">
+      <div class="iframe-container" id="ifc-links">
+        <iframe scrolling="no" src="https://goesselsdorf.tennisplatz.info/infoscreen/fa50be7dd32606f936ffd880c84a498c6f8cacb4?days=10&refresh=1"></iframe>
+      </div>
+      <div class="iframe-container" id="ifc-rechts">
+        <iframe id="wechsel-iframe" scrolling="no"></iframe>  
+      </div>
+      <div id="loading-bar"></div> 
+    </div>
+  </div>
+  <script>
+    document.getElementById("loading-bar").addEventListener('animationiteration', rotateIframeSrc);
+  </script>
+</body>
+</html>
