@@ -22,19 +22,34 @@
     h1 {
       margin: 0;
       padding: 5px;
+      display: flex;
+      align-items: center;
     }
 
+    h1 .h1-span {
+      align-items: center;
+      justify-content: center;
+    }
+    
     #h1-links {
-      float: left;
+      text-align: left;
+      flex: 2;
+    }
+
+    #h1-mitte {
+      text-align: center;
+      flex: 1;
+      margin: -25px;
     }
 
     #h1-rechts {
-      float: right;
       font-weight: normal;
+      text-align: right;
+      flex: 2;
     }
     
     .iframe-container {
-      height: calc(100% - 16px);
+      height: 98.5%;
       display: flex;
       padding: 5px;
       position: relative;
@@ -83,9 +98,11 @@
     
     
     function uhrzeit() {
+      var wochentage = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
       var monate = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
 
       var today = new Date();
+      var wochentag = wochentage[today.getDay()];
       var tag = today.getDate();
       tag = checkTime(tag);
       var monat = monate[today.getMonth()]
@@ -98,7 +115,7 @@
       var sekunden = today.getSeconds();
       sekunden = checkTime(sekunden);
       var time = stunden + ":" + minuten + "<span style='font-size: 12pt;'>:" + sekunden + "</span>";
-      var dateTime = date+' &ndash; '+time;
+      var dateTime = wochentag + ", " + date + ' &ndash; ' + time;
 
       document.getElementById("h1-rechts").innerHTML = dateTime;
 
@@ -134,7 +151,16 @@
 </head>
 <body onload="uhrzeit(); rotateIframeSrc()">
   <div class="container">
-    <h1 id="h1"><span id="h1-links">Viel Spaß! &#127934;&#127934;&#127934;</span><span id="h1-rechts"></span></h1>
+    <h1>
+      <span id="h1-links" class="h1-span">Servus! Viel Spaß &#127934;</span>
+      <span id="h1-mitte" class="h1-span">
+        <a class="weatherwidget-io" href="https://forecast7.com/de/46d5714d63/gosselsdorf/" data-label_1="Gösselsdorf" data-label_2="Wetter" data-font="Verdana" data-mode="Current" data-days="3" data-theme="orange" data-basecolor="orange" data-textcolor="black" ></a>
+        <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+        </script>
+      </span>
+      <span id="h1-rechts" class="h1-span"></span>
+    </h1>
     <div class="iframe-wrapper">
       <div class="iframe-container" id="ifc-links">
         <iframe scrolling="no" src="https://goesselsdorf.tennisplatz.info/infoscreen/fa50be7dd32606f936ffd880c84a498c6f8cacb4?days=8&refresh=1"></iframe>
