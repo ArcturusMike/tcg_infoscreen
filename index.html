@@ -62,6 +62,12 @@
     #ifc-rechts {
       width: 30%;
     }
+
+    #slidetext {
+      position: absolute;
+      bottom: 4px;
+      right: 10px;
+    }
     
     .iframe-container iframe {
       width: 100%;
@@ -90,13 +96,7 @@
       100% { width: 100%; }
     }
   </style>
-  <script>
-    // Seite nach gewisser Zeit automatisch neu laden
-    window.setTimeout(function() {
-      window.location.reload();
-    }, 240000); // alle 240 Sekunden die Seite neu laden (240 = 2*Anzahl_Seiten*Sekunden_Darstellung)
-    
-    
+  <script>  
     function uhrzeit() {
       var wochentage = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
       var monate = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
@@ -138,21 +138,32 @@
       "https://www.tenniskaernten.at/liga/juniors/231842"
     ];
     var currentIndex = 0;
+    var slideIndex = 0;
     var iframe = null;
     function rotateIframeSrc() {
       iframe = iframe || document.getElementById("wechsel-iframe");
       if (iframe) {
         iframe.src = iframeUrls[currentIndex];
         currentIndex = (currentIndex + 1) % iframeUrls.length;
-
+        slideIndex++
+        if (slideIndex > iframeUrls.length) {
+          slideIndex = 1;
+        }
       }
+      document.getElementById("slidetext").innerHTML = slideIndex + " / " + iframeUrls.length;
     }
+
+
+    // Seite nach gewisser Zeit automatisch neu laden
+    window.setTimeout(function() {
+      window.location.reload();
+    }, iframeUrls.length*2*1000*20); // alle 240 Sekunden die Seite neu laden (240 = 2*Anzahl_Seiten*Sekunden_Darstellung)
   </script>
 </head>
 <body onload="uhrzeit(); rotateIframeSrc()">
   <div class="container">
     <h1>
-      <span id="h1-links" class="h1-span">Servus! Viel Spaß &#127934;</span>
+      <span id="h1-links" class="h1-span">Viel Spaß! &#127934;&#127934;&#127934;</span>
       <span id="h1-mitte" class="h1-span">
         <a class="weatherwidget-io" href="https://forecast7.com/de/46d5714d63/gosselsdorf/" data-label_1="Gösselsdorf" data-label_2="Wetter" data-font="Verdana" data-mode="Current" data-days="3" data-theme="orange" data-basecolor="orange" data-textcolor="black" ></a>
         <script>
@@ -166,7 +177,8 @@
         <iframe scrolling="no" src="https://goesselsdorf.tennisplatz.info/infoscreen/fa50be7dd32606f936ffd880c84a498c6f8cacb4?days=8&refresh=1"></iframe>
       </div>
       <div class="iframe-container" id="ifc-rechts">
-        <iframe id="wechsel-iframe" scrolling="no"></iframe>  
+        <iframe id="wechsel-iframe" scrolling="no"></iframe>
+        <span id="slidetext" style="font-size: 10pt;"></span>  
       </div>
       <div id="loading-bar"></div> 
     </div>
