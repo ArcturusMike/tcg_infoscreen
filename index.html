@@ -160,7 +160,7 @@
 
     // Seite nach gewisser Zeit automatisch neu laden
     window.setTimeout(function() {
-      window.location.reload();
+      window.location.reload(true);
     }, iframeUrls.length*2*1000*20); // alle 240 Sekunden die Seite neu laden (240 = 2*Anzahl_Seiten*Sekunden_Darstellung)
   </script>
   <meta charset="utf-8">
