@@ -1,0 +1,16 @@
+.main-container {
+    height: 100vh;
+}
+
+.row-oneliner {
+    height: 4%;
+}
+
+.row-content {
+    height: calc(92%/3);
+}
+
+.inner-div {
+    height: 100%;
+    background-color: lightgray;
+}
