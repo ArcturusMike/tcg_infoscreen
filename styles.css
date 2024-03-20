@@ -10,7 +10,16 @@
     height: calc(92%/3);
 }
 
-.inner-div {
-    height: 100%;
-    background-color: lightgray;
+
+.row-title {
+    height: 15%;
 }
+
+.row-iframe {
+    height: 85%;
+}
+
+.div-content, .div-title, .div-iframe {
+    height: 100%;
+}
+
