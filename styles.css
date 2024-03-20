@@ -1,20 +1,72 @@
+body {
+    overflow: hidden;
+}
+
 .main-container {
     height: 100vh;
+}
+
+.row-title {
+    height: 7%;
+}
+
+.row-iframe {
+    height: 93%;
 }
 
 .row-rand {
     height: 3%;
 }
-
-.row-mitte {
-    height: calc(94%/3);
+#row-eins {
+    height: 31.5%;
 }
 
-
-.row-title {
-    height: 10%;
+#row-zwei {
+    height: 35%;
 }
 
-.row-iframe {
-    height: 90%;
+#row-drei {
+    height: 27.5%;
+}
+
+#platz-iframe {
+    width: calc(100%/0.7);
+    height: calc(100%/0.7);
+    transform: scale(0.7);
+    transform-origin: 0 0;
+}
+
+#pdf-iframe {
+    width: calc(100%/0.5);
+    height: calc(100%/0.5);
+    transform: scale(0.5);
+    transform-origin: 0 0;
+}
+
+#homepage-iframe {
+    width: calc(100%/1);
+    height: calc(100%/1);
+    transform: scale(1);
+    transform-origin: 0 0;
+}
+
+#tabelle-iframe {
+    width: calc(100%/0.8);
+    height: calc(100%/0.8);
+    transform: scale(0.8);
+    transform-origin: 0 0;
+}
+
+#spielplan-iframe {
+    width: calc(100%/0.8);
+    height: calc(100%/0.8);
+    transform: scale(0.8);
+    transform-origin: 0 0;
+}
+
+#wetter-iframe {
+    width: calc(100%/0.8);
+    height: calc(100%/0.8);
+    transform: scale(0.8);
+    transform-origin: 0 0;
 }
