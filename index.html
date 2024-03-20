@@ -11,47 +11,94 @@
 </head>
 <body>
     <div class="container-fluid main-container">
-        <div id="row-oben" class="row row-oneliner">
+        <div class="row row-rand" id="row-oben">
             <!-- Maybe add to all cols: d-flex align-items-center justify-content-center -->
-            <div class="col-12 p-1 pt-2 ps-2 pe-2">
-                <div class="container-fluid rounded p-0 bg-danger d-flex align-items-center justify-content-center div-content">Uhrzeit</div>
+            <div class="col p-1 pt-2 ps-2 pe-2">
+                <div class="container-fluid p-0 rounded border border-dark bg-danger d-flex align-items-center justify-content-center h-100">Uhrzeit</div>
             </div>
         </div>
-        <div id="row-platz-wetter" class="row row-content">
+        <div class="row row-mitte" id="row-platz-wetter">
             <div class="col-7 p-1 ps-2">
-                <div class="container-fluid rounded p-0 bg-info d-flex align-items-center justify-content-center div-content">Platzreservierung</div>
-            </div>
-            <div class="col-5 p-1 pe-2">
-                <div class="container-fluid rounded p-0 bg-success d-flex align-items-center justify-content-center div-content">Wetter</div>
-            </div>
-        </div>
-        <div id="row-pdf-web" class="row row-content">
-            <div class="col-6 p-1 ps-2">
-                <div class="container-fluid rounded p-0 bg-danger d-flex align-items-center justify-content-center div-content">PDFs</div>
-            </div>
-            <div class="col-6 p-1 pe-2">
-                <div class="container-fluid rounded bg-warning div-content">
-                    <div class="row row-title border border-dark rounded">
+                <div class="container-fluid h-100 bg-info rounded border border-dark">
+                    <div class="row row-title rounded">
                         <div class="col p-0">
-                            <div class="container-fluid div-title d-flex align-items-center justify-content-center">Homepage</div>
+                            <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><h2>Platzreservierung</h2></div>
                         </div>
                     </div>
-                    <div class="row row-iframe border border-dark rounded">
+                    <div class="row row-iframe rounded">
                         <div class="col p-0">
-                            <div class="container-fluid div-iframe div-title d-flex align-items-center justify-content-center">iframe</div>
+                            <div class="container-fluid p-0 h-100"><iframe class="w-100 h-100 rounded-bottom" src="https://goesselsdorf.tennisplatz.info/infoscreen/fa50be7dd32606f936ffd880c84a498c6f8cacb4?days=7&refresh=1" scrolling="no"></iframe></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 p-1 pe-2">
+                <div class="container-fluid h-100 bg-success rounded border border-dark">
+                    <div class="row row-title rounded">
+                        <div class="col p-0">
+                            <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><h2>Wetterradar</h2></div>
+                        </div>
+                    </div>
+                    <div class="row row-iframe rounded">
+                        <div class="col p-0">
+                            <div class="container-fluid p-0 h-100"><iframe class="w-100 h-100 rounded-bottom" src="https://radar.wo-cloud.com/mobile/embedded?wrx=46.573,14.635&wry=46.573,14.635&timeZone=Europe/Vienna&wrm=10" scrolling="no"></iframe></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="row-meisterschaft" class="row row-content">
-            <div class="col-12 p-1 pe-2 ps-2">
-                <div class="container-fluid rounded p-0 bg-primary d-flex align-items-center justify-content-center div-content">Tabelle & Spielplan</div>
+        <div class="row row-mitte" id="row-pdf-web">
+            <div class="col-6 p-1 ps-2">
+                <div class="container-fluid h-100 bg-danger rounded border border-dark">
+                    <div class="row row-title rounded">
+                        <div class="col p-0">
+                            <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><h2>Ausschreibungen</h2></div>
+                        </div>
+                    </div>
+                    <div class="row row-iframe rounded">
+                        <div class="col p-0">
+                            <div class="container-fluid p-0 h-100"><iframe class="w-100 h-100 rounded-bottom" src="pdftest.pdf#toolbar=0" scrolling="no"></iframe></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 p-1 pe-2">
+                <div class="container-fluid h-100 bg-warning rounded border border-dark">
+                    <div class="row row-title rounded">
+                        <div class="col p-0">
+                            <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><h2>Homepage-News</h2></div>
+                        </div>
+                    </div>
+                    <div class="row row-iframe rounded">
+                        <div class="col p-0">
+                            <div class="container-fluid p-0 h-100"><iframe class="w-100 h-100 rounded-bottom" src="https://www.tcgoesselsdorf.at#primary" scrolling="no"></iframe></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="row-unten" class="row row-oneliner">
-            <div class="col-12 p-1 pb-2 ps-2 pe-2">
-                <div class="container-fluid rounded p-0 bg-danger d-flex align-items-center justify-content-center div-content">Vorstandsdienst</div>
+        <div class="row row-mitte" id="row-meisterschaft">
+            <div class="col-12 p-1 pe-2 ps-2">
+                <div class="container-fluid h-100 bg-primary rounded border border-dark">
+                    <div class="row row-title rounded">
+                        <div class="col p-0">
+                            <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><h2>Meisterschaft</h2></div>
+                        </div>
+                    </div>
+                    <div class="row row-iframe rounded">
+                        <div class="col p-0">
+                            <div class="container-fluid p-0 h-100"><iframe class="w-100 h-100 rounded-bottom" src="https://tennis-info-sigma.vercel.app/league/231720" scrolling="no"></iframe></div>
+                        </div>
+                        <div class="col p-0">
+                            <div class="container-fluid p-0 h-100"><iframe class="w-100 h-100 rounded-bottom" src="https://tennis-info-sigma.vercel.app/team/532104" scrolling="no"></iframe></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-rand" id="row-unten">
+            <div class="col p-1 pb-2 ps-2 pe-2">
+                <div class="container-fluid p-0 rounded border border-dark bg-danger d-flex align-items-center justify-content-center h-100">Vorstandsdienst</div>
             </div>
         </div>
     </div>
