@@ -14,11 +14,11 @@ body {
 }
 
 .row-title {
-    height: 7%;
+    height: 45px; /* weil fs-4 hat 40.9px */
 }
 
 .row-iframe {
-    height: 93%;
+    height: calc(100% - 45px);
 }
 
 .row-rand {
