@@ -13,13 +13,13 @@
     <div class="container-fluid main-container">
         <div class="row row-rand" id="row-oben">
             <div class="col p-1 pt-2 ps-2 pe-2">            
-                <div class="container-fluid h-100 bg-danger rounded border border-dark">
+                <div class="container-fluid h-100 bg-danger rounded">
                     <div class="row h-100 d-flex align-items-center">
                         <div class="col-5 p-0 h-100 text-start d-flex align-items-center">
-                            <div class="container-fluid h4" id="starttext">Willkommen beim TC Gösselsdorf.</div>
+                            <div class="container-fluid fs-4" id="starttext">Willkommen beim TC Gösselsdorf.</div>
                         </div>
                         <div class="col-3 p-0 h-100 text-center d-flex align-items-center">
-                            <div class="container-fluid h4" id="temperatur">
+                            <div class="container-fluid" id="temperatur">
                                 <a id="temperaturwidget" class="weatherwidget-io" href="https://forecast7.com/de/46d5714d63/gosselsdorf/" data-label_1="" data-label_2="" data-mode="Current" data-days="3">Gösselsdorf Wetter</a>
                                 <script>
                                 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="col-4 p-0 h-100 text-end d-flex align-items-center">
-                            <div class="container-fluid h4" id="uhrzeit"></div>
+                            <div class="container-fluid fs-4" id="uhrzeit"></div>
                         </div>
                     </div>
                 </div>
@@ -35,10 +35,10 @@
         </div>
         <div class="row row-mitte" id="row-eins">
             <div class="col p-1 ps-2 pe-2">
-                <div class="container-fluid h-100 bg-primary rounded border border-dark">
+                <div class="container-fluid h-100 bg-primary rounded">
                     <div class="row row-title rounded">
                         <div class="col p-0">
-                            <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><h3>Platzreservierung</h3></div>
+                            <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><span class="fs-3">Platzreservierung</span></div>
                         </div>
                     </div>
                     <div class="row row-iframe rounded">
@@ -51,10 +51,10 @@
         </div>
         <div class="row row-mitte" id="row-zwei">
             <div class="col-5 p-1 ps-2">
-                <div class="container-fluid h-100 bg-warning rounded border border-dark">
+                <div class="container-fluid h-100 bg-warning rounded">
                     <div class="row row-title rounded">
                         <div class="col p-0">
-                            <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><h3>Ausschreibungen</h3></div>
+                            <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><span class="fs-3">Ausschreibungen</span></div>
                         </div>
                     </div>
                     <div class="row row-iframe rounded">
@@ -65,10 +65,10 @@
                 </div>
             </div>
             <div class="col-7 p-1 pe-2">
-                <div class="container-fluid h-100 bg-info rounded border border-dark">
+                <div class="container-fluid h-100 bg-info rounded">
                     <div class="row row-title rounded">
                         <div class="col p-0">
-                            <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><h3>Homepage-News</h3></div>
+                            <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><span class="fs-3">Homepage-News</span></div>
                         </div>
                     </div>
                     <div class="row row-iframe rounded">
@@ -81,10 +81,10 @@
         </div>
         <div class="row row-mitte" id="row-drei">
             <div class="col-7 p-1 ps-2">
-                <div class="container-fluid h-100 bg-secondary rounded border border-dark">
+                <div class="container-fluid h-100 bg-secondary rounded">
                     <div class="row row-title rounded">
                         <div class="col p-0">
-                            <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><h3>Meisterschaft</h3></div>
+                            <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><span class="fs-3">Meisterschaft</span></div>
                         </div>
                     </div>
                     <div class="row row-iframe rounded">
@@ -98,10 +98,10 @@
                 </div>
             </div>
             <div class="col-5 p-1 pe-2">
-                <div class="container-fluid h-100 bg-success rounded border border-dark">
+                <div class="container-fluid h-100 bg-success rounded">
                     <div class="row row-title rounded">
                         <div class="col p-0">
-                            <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><h3>Wetterradar</h3></div>
+                            <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><span class="fs-3">Wetterradar</span></div>
                         </div>
                     </div>
                     <div class="row row-iframe rounded">
@@ -114,8 +114,8 @@
         </div>
         <div class="row row-rand" id="row-unten">
             <div class="col p-1 pb-2 ps-2 pe-2">
-                <div class="container-fluid rounded border border-dark bg-danger d-flex align-items-center h-100">
-                    <h4>Vorstands-Wochendienst:&nbsp;&nbsp;&nbsp;<span class="fw-light" id="vorstand"></span></h4>
+                <div class="container-fluid rounded bg-danger d-flex align-items-center h-100">
+                    <span class="fs-4">Vorstands-Wochendienst:&nbsp;&nbsp;&nbsp;<span class="fs-4 fw-light" id="vorstand"></span></h4>
                 </div>
             </div>
         </div>
