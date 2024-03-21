@@ -71,3 +71,10 @@ function vorstandsdienst() {
 
     document.getElementById("vorstand").innerHTML = dienstname;
 }
+
+
+
+// Seite nach gewisser Zeit automatisch neu laden
+window.setTimeout(function() {
+    window.location.reload(true);
+  }, 1000*60*10);   // alle 10 Minuten
