@@ -24,19 +24,19 @@ body {
 .row-rand {
     height: 3%;
 }
-#row-eins {
+#row-platzreservierung {
     height: 31.5%;
 }
 
-#row-zwei {
+#row-pdf-homepage {
     height: 35%;
 }
 
-#row-drei {
+#row-meisterschaft-wetter {
     height: 27.5%;
 }
 
-#platz-iframe {
+#platzreservierung-iframe {
     width: calc(100%/0.7);
     height: calc(100%/0.7);
     transform: scale(0.7);
