@@ -20,8 +20,8 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikalen Bildschirm.
 12. Git Autoclone zu jeder vollen Stunde:
     - `sudo crontab -e` und dort:
     - `0 * * * * rm -r /var/www/html/tcg_infoscreen/ && git clone https://github.com/ArcturusMike/tcg_infoscreen.git /var/www/html/tcg_infoscreen/ && service apache2 restart`
-13. Via Screen Configuration das Bild drehen
-- [ ] 4K beim Raspberry in der Raspi-Config aktivieren --> Auflösung 1920x1080 oder 3840x2160?
+13. 4K beim Raspberry in der Raspi-Config aktivieren --> Welche Auflösung dann?
+14. Via Screen Configuration das Bild drehen
 - [ ] Automatische Software-Updates einrichten
 - [ ] Bildschirm dunkel 22-06 Uhr via HDMI-CEC einstellen
 - [ ] Täglicher Reboot zu gewisser Zeit?
