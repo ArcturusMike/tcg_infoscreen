@@ -74,7 +74,14 @@ function vorstandsdienst() {
 
 
 
-// Seite nach gewisser Zeit automatisch neu laden
-window.setTimeout(function() {
-    window.location.reload(true);
-  }, 1000*60*10);   // alle 10 Minuten
+// Function to reload the page if the current time is xx:10, xx:20, xx:30, etc.
+function seiteNeuladen() {
+    const currentDate = new Date();
+    const minutes = currentDate.getMinutes();
+  
+    if (minutes % 10 === 0) {
+      location.reload();
+    }
+  }
+  // Call the function every minute
+  setInterval(seiteNeuladen, 60000);
