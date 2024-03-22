@@ -1,13 +1,13 @@
 function uhrzeit() {
     let wochentage = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
-    let monate = ["01","02","03","04","05","06","07","08","09","10","11","12"];
+    let monate = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
 
     let today = new Date();
     let wochentag = wochentage[today.getDay()];
     let tag = today.getDate();
     tag = checkTime(tag);
     let monat = monate[today.getMonth()]
-    let date = tag + "." + monat + ".";
+    let date = tag + ". " + monat;
 
     let stunden = today.getHours();
     stunden = checkTime(stunden);
@@ -72,6 +72,35 @@ function vorstandsdienst() {
     document.getElementById("vorstand").innerHTML = dienstname;
 }
 
+function meisterschaftsRotation() {
+    const tabellen = [
+        "https://tennis-info-sigma.vercel.app/league/231720", 
+        "https://tennis-info-sigma.vercel.app/league/231746", 
+        "https://tennis-info-sigma.vercel.app/league/231861", 
+        "https://tennis-info-sigma.vercel.app/league/231842"
+    ];
+    const spielplaene = [
+        "https://tennis-info-sigma.vercel.app/team/532104", 
+        "https://tennis-info-sigma.vercel.app/team/531968", 
+        "https://tennis-info-sigma.vercel.app/team/532462", 
+        "https://tennis-info-sigma.vercel.app/team/538002"
+    ];
+
+    let index = 0;
+
+    function ChangeTeamSources() {
+        document.getElementById('tabelle-iframe').src = tabellen[index];
+        document.getElementById('spielplan-iframe').src = spielplaene[index];
+        document.getElementById("mannschaftsnummer").innerHTML = "(" + (index + 1) + "/" + tabellen.length + ")";
+        index = (index + 1) % tabellen.length; // Wrap around the index
+    }
+
+    ChangeTeamSources();
+    setInterval(ChangeTeamSources, 30000); // Swap every 30 seconds
+}
+
+
+
 
 
 // Function to reload the page if the current time is xx:10, xx:20, xx:30, etc.
@@ -80,7 +109,7 @@ function seiteNeuladen() {
     const minutes = currentDate.getMinutes();
   
     if (minutes % 10 === 0) {
-      location.reload();
+      window.location.reload(true);
     }
   }
   // Call the function every minute
