@@ -15,7 +15,7 @@ function uhrzeit() {
     minuten = checkTime(minuten);
     let sekunden = today.getSeconds();
     sekunden = checkTime(sekunden);
-    let time = stunden + ":" + minuten + "<span style='font-size: 12pt;'>:" + sekunden + "</span>";
+    let time = stunden + ":" + minuten + "<span style='font-size: 16pt;'>:" + sekunden + "</span>";
     let dateTime = wochentag + ", " + date + ' &ndash; ' + time;
 
     document.getElementById("uhrzeit").innerHTML = dateTime;
