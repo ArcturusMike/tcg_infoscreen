@@ -74,16 +74,16 @@ function vorstandsdienst() {
 
 function meisterschaftsRotation() {
     const tabellen = [
-        "https://tennis-info-sigma.vercel.app/league/231720", 
-        "https://tennis-info-sigma.vercel.app/league/231746", 
-        "https://tennis-info-sigma.vercel.app/league/231861", 
-        "https://tennis-info-sigma.vercel.app/league/231842"
+        "https://tennis-info-sigma.vercel.app/e/league/231720", 
+        "https://tennis-info-sigma.vercel.app/e/league/231746", 
+        "https://tennis-info-sigma.vercel.app/e/league/231861", 
+        "https://tennis-info-sigma.vercel.app/e/league/231842"
     ];
     const spielplaene = [
-        "https://tennis-info-sigma.vercel.app/team/532104", 
-        "https://tennis-info-sigma.vercel.app/team/531968", 
-        "https://tennis-info-sigma.vercel.app/team/532462", 
-        "https://tennis-info-sigma.vercel.app/team/538002"
+        "https://tennis-info-sigma.vercel.app/e/team/532104", 
+        "https://tennis-info-sigma.vercel.app/e/team/531968", 
+        "https://tennis-info-sigma.vercel.app/e/team/532462", 
+        "https://tennis-info-sigma.vercel.app/e/team/538002"
     ];
 
     let index = 0;
