@@ -99,9 +99,65 @@ function meisterschaftsRotation() {
     setInterval(ChangeTeamSources, 30000); // Swap every 30 seconds
 }
 
+function homepageRotation() {
+    const artikel = [
+        "http://www.tcgoesselsdorf.at/", 
+        "https://www.tcgoesselsdorf.at/termine/", 
+        "https://www.tcgoesselsdorf.at/vereinsmeisterschaft-2023-infos/"
+    ];
+    const dauer = [
+        30000, 
+        20000, 
+        10000
+    ]; // in milliseconds
 
+    let index = 0;
+    let delay = 0;
 
+    function changeHomepageSources() {
+        setTimeout(() => {
+            delay = dauer[index];
+            document.getElementById('homepage-iframe').src = artikel[index] + "#primary";
+            index = (index + 1) % artikel.length; // Increment index, looping back to 0 if necessary
+            changeHomepageSources();
+        }, delay);
+    }
 
+    changeHomepageSources();
+}
+
+function pdfRotation() {
+    const pdfs = [
+        "mixed_1_2023.pdf", 
+        "ul_diplom.pdf", 
+        "tennisman.pdf"
+    ];
+    const dauer = [
+        10000, 
+        20000, 
+        30000
+    ]; // in milliseconds
+
+    let index = 0;
+    let delay = 0;
+
+    function changePDFSources() {
+        setTimeout(() => {
+            delay = dauer[index];
+            document.getElementById('pdf-iframe').src = "./" + pdfs[index] + "#toolbar=0&scrollbar=0&view=Fit";
+            index = (index + 1) % pdfs.length; // Increment index, looping back to 0 if necessary
+            changePDFSources();
+        }, delay);
+    }
+
+    changePDFSources();
+}
+
+function rotationen() {
+    meisterschaftsRotation();
+    homepageRotation();
+    pdfRotation();
+}
 
 // Function to reload the page if the current time is xx:10, xx:20, xx:30, etc.
 function seiteNeuladen() {
