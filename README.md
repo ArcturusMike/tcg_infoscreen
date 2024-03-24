@@ -22,7 +22,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikalen Bildschirm.
     - `@reboot sleep 10 && DISPLAY=:0 chromium-browser --hide-crash-restore-bubble --start-fullscreen http://localhost/tcg_infoscreen/` (HDMI muss angeschlossen sein, damit es funktioniert!)
 14. Damit es einen Ordner zum Löschen später gibt, das Repository manuell clonen:
     - `sudo git clone https://github.com/ArcturusMike/tcg_infoscreen.git /var/www/html/tcg_infoscreen/`
-15. Alle Textdateien writeable machen: `sudo chmod 777 /var/www/html/*.txt`
+15. Den Ordner mit den Dateien rekursiv zugänglich machen: `sudo chmod -R 777 /var/www/html/dateien/`
 16. Git Autoclone alle 10 Minuten einer Stunde:
     - `sudo crontab -e` und dort:
     - `5,15,25,35,45,55 * * * * rm -r /var/www/html/tcg_infoscreen/ && git clone https://github.com/ArcturusMike/tcg_infoscreen.git /var/www/html/tcg_infoscreen/ && service apache2 restart`
