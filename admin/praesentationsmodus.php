@@ -10,7 +10,7 @@
     $praesentationsmodus = $_POST["praesentationsmodus"];
 
     // Write content to praesentationsmodus file
-    $praesentationsmodus_file = fopen("../../praesentationsmodus.txt", "w") or die("Unable to open file!");
+    $praesentationsmodus_file = fopen("../../dateien/praesentationsmodus.txt", "w") or die("Unable to open file!");
     fwrite($praesentationsmodus_file, $praesentationsmodus);
     fclose($praesentationsmodus_file);
 

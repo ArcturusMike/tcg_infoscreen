@@ -11,12 +11,12 @@
     $pdfs_namen = $_POST["pdfs-namen"];
 
     // Write content to pdfs_dauer file
-    $pdfs_dauer_file = fopen("../../pdfs_dauer.txt", "w") or die("Unable to open file!");
+    $pdfs_dauer_file = fopen("../../dateien/pdfs_dauer.txt", "w") or die("Unable to open file!");
     fwrite($pdfs_dauer_file, $pdfs_dauer);
     fclose($pdfs_dauer_file);
 
     // Write content to pdfs file
-    $pdfs_namen_file = fopen("../../pdfs.txt", "w") or die("Unable to open file!");
+    $pdfs_namen_file = fopen("../../dateien/pdfs.txt", "w") or die("Unable to open file!");
     fwrite($pdfs_namen_file, $pdfs_namen);
     fclose($pdfs_namen_file);
 

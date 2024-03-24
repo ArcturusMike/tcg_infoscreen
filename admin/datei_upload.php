@@ -8,7 +8,7 @@
 <body>
 <?php
     if(isset($_FILES["datei"])) {
-        $targetDir = "../../";
+        $targetDir = "../../dateien/";
         $targetFile = $targetDir . basename($_FILES["datei"]["name"]);
         $uploadOk = 1;
     

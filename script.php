@@ -140,8 +140,8 @@
     }
 
     function homepageRotation() {
-        const artikel = [<?php processFile('../artikel.txt'); ?>];
-        const dauer = [<?php processFile('../artikel_dauer.txt'); ?>]; // in milliseconds
+        const artikel = [<?php processFile('../dateien/artikel.txt'); ?>];
+        const dauer = [<?php processFile('../dateien/artikel_dauer.txt'); ?>]; // in milliseconds
 
         let index = 0;
         let delay = 0;
@@ -160,8 +160,8 @@
     }
 
     function pdfRotation() {
-        const pdfs = [<?php processFile('../pdfs.txt'); ?>];
-        const dauer = [<?php processFile('../pdfs_dauer.txt'); ?>]; // in milliseconds
+        const pdfs = [<?php processFile('../dateien/pdfs.txt'); ?>];
+        const dauer = [<?php processFile('../dateien/pdfs_dauer.txt'); ?>]; // in milliseconds
 
         let index = 0;
         let delay = 0;
@@ -169,7 +169,7 @@
         function changePDFSources() {
             setTimeout(() => {
                 delay = dauer[index];
-                document.getElementById('pdf-iframe').src = "../" + pdfs[index] + "#toolbar=0&scrollbar=0&view=Fit";
+                document.getElementById('pdf-iframe').src = "../dateien/" + pdfs[index] + "#toolbar=0&scrollbar=0&view=Fit";
                 document.getElementById("pdfnummer").innerHTML = "(" + (index + 1) + "/" + pdfs.length + ")";
                 index = (index + 1) % pdfs.length; // Increment index, looping back to 0 if necessary
                 changePDFSources();
