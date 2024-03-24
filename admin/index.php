@@ -38,7 +38,7 @@
                     <div class="col">
                         <form action="praesentationsmodus.php" method="post">
                         <div class="form-group">
-                            <label for="praesentationsmodus">Name:</label>
+                            <label for="praesentationsmodus">Name der Datei, die angezeigt werden soll:</label>
                             <input type="text" class="form-control" id="praesentationsmodus" name="praesentationsmodus" value='<?php echo file_get_contents("../../dateien/praesentationsmodus.txt"); ?>'>
                             <button type="submit" class="form-control btn btn-primary mt-2">Präsentationsmodus ändern</button>
                         </div>
