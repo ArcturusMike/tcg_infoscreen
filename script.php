@@ -169,7 +169,7 @@
         function changePDFSources() {
             setTimeout(() => {
                 delay = dauer[index];
-                document.getElementById('pdf-iframe').src = "./" + pdfs[index] + "#toolbar=0&scrollbar=0&view=Fit";
+                document.getElementById('pdf-iframe').src = "../" + pdfs[index] + "#toolbar=0&scrollbar=0&view=Fit";
                 document.getElementById("pdfnummer").innerHTML = "(" + (index + 1) + "/" + pdfs.length + ")";
                 index = (index + 1) % pdfs.length; // Increment index, looping back to 0 if necessary
                 changePDFSources();

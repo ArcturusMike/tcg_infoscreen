@@ -11,8 +11,12 @@
     foreach ($filesToDelete as $file) {
         $filePath = "../../" . $file;
         if (file_exists($filePath)) {
-            unlink($filePath);
-            echo "<p>Datei $file wurde gelöscht.</p>";
+            if (unlink($filePath)) {
+                echo "<p>Datei $file wurde gelöscht.</p>";
+            }
+            else {
+                echo "<p>Fehler beim Löschen</p>";
+            }
         } 
         else {
             echo "<p>Datei $file existiert nicht oder wurde bereits gelöscht.</p>";
