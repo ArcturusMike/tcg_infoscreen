@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body onload="uhrzeit(); vorstandsdienst(); rotationen();">
+<body onload="uhrzeit(); vorstandsdienst(); rotationen(); praesentationsmodus();">
     <div class="container-fluid main-container">
         <div class="row row-rand" id="row-oben">
             <div class="col p-2 pt-3 ps-3 pe-3">            

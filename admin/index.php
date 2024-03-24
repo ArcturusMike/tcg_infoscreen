@@ -38,7 +38,7 @@
                         <form action="praesentationsmodus.php" method="post">
                         <div class="form-group">
                             <label for="praesentationsmodus">Name:</label>
-                            <input type="text" class="form-control" id="praesentationsmodus" name="praesentationsmodus">
+                            <input type="text" class="form-control" id="praesentationsmodus" name="praesentationsmodus" value='<?php echo file_get_contents("../praesentationsmodus.txt"); ?>'>
                             <button type="submit" class="form-control btn btn-primary mt-2">Präsentationsmodus ändern</button>
                         </div>
                         </form>
