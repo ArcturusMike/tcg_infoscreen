@@ -14,7 +14,13 @@
     fwrite($praesentationsmodus_file, $praesentationsmodus);
     fclose($praesentationsmodus_file);
 
-    echo "<p>Präsentationsmodus erfolgreich geändert.</p>";
+    if ($praesentationsmodus == "") {
+        echo "<p>Präsentationsmodus erfolgreich DEAKTIVIERT.</p>";
+    }
+    else {
+        echo "<p>Präsentationsmodus erfolgreich AKTIVIERT.</p>";
+    }
+
 ?>
 <p><a href="index.php">Zurück zur Admin-Seite</a></p>
 </body>

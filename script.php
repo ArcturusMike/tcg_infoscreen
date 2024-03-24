@@ -185,11 +185,6 @@
         pdfRotation();
     }
 
-    function praesentationsmodus() {
-        if (<?php echo '"' . file_get_contents("./praesentationsmodus.txt") . '"'; ?> != "") {
-
-        }
-    }
 
 
     // Function to reload the page if the current time is xx:10, xx:20, xx:30, etc.

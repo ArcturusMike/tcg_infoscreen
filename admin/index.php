@@ -34,6 +34,7 @@
                 <div class="row mt-4">
                     <h2>Präsentations-Modus</h2>
                     <p class="text-danger fw-semibold">Wenn nur die Platzreservierung unten und eine PDF oben angezeigt werden soll, den Dateinamen hier eintragen. Ist das Feld leer, wird der Infoscreen wie üblich angezeigt. Bis der gewählte Modus übernommen wird, dauert es max. 10 Minuten.</p>
+                    <p class="text-danger fw-semibold">Nur die 1. Seite wird angezeigt!</p>
                     <div class="col">
                         <form action="praesentationsmodus.php" method="post">
                         <div class="form-group">

@@ -19,6 +19,10 @@ body {
     height: 3%;
 }
 
+#row-obererteil {
+    height: 62%;
+}
+
 #row-pdf-homepage {
     height: 41%;
 }
