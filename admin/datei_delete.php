@@ -9,7 +9,7 @@
 <?php
     $filesToDelete = $_POST['filesToDelete'];
     foreach ($filesToDelete as $file) {
-        $filePath = "../" . $file;
+        $filePath = "../../" . $file;
         if (file_exists($filePath)) {
             unlink($filePath);
             echo "<p>Datei $file wurde gelöscht.</p>";

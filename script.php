@@ -140,8 +140,8 @@
     }
 
     function homepageRotation() {
-        const artikel = [<?php processFile('artikel.txt'); ?>];
-        const dauer = [<?php processFile('artikel_dauer.txt'); ?>]; // in milliseconds
+        const artikel = [<?php processFile('../artikel.txt'); ?>];
+        const dauer = [<?php processFile('../artikel_dauer.txt'); ?>]; // in milliseconds
 
         let index = 0;
         let delay = 0;
@@ -160,8 +160,8 @@
     }
 
     function pdfRotation() {
-        const pdfs = [<?php processFile('pdfs.txt'); ?>];
-        const dauer = [<?php processFile('pdfs_dauer.txt'); ?>]; // in milliseconds
+        const pdfs = [<?php processFile('../pdfs.txt'); ?>];
+        const dauer = [<?php processFile('../pdfs_dauer.txt'); ?>]; // in milliseconds
 
         let index = 0;
         let delay = 0;

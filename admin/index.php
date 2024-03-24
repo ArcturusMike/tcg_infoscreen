@@ -18,11 +18,11 @@
                         <h2>Homepage-Artikel</h2>
                             <div class="col-2 pe-0 text-center">
                                 <h5>Dauer</h5>
-                                <textarea class="form-control" name="artikel-dauer" rows="10" placeholder="Sekunden"><?php echo file_get_contents("../artikel_dauer.txt"); ?></textarea>
+                                <textarea class="form-control" name="artikel-dauer" rows="10" placeholder="Sekunden"><?php echo file_get_contents("../../artikel_dauer.txt"); ?></textarea>
                             </div>
                             <div class="col ps-0 text-center">
                                 <h5>Links <span class="fs-6 fw-semibold text-danger">("http://" bzw. https:// muss dabei sein!")</span></h5>
-                                <textarea class="form-control" name="artikel-links" rows="10" placeholder='URL inkl. "http"/"https"'><?php echo file_get_contents("../artikel.txt"); ?></textarea>
+                                <textarea class="form-control" name="artikel-links" rows="10" placeholder='URL inkl. "http"/"https"'><?php echo file_get_contents("../../artikel.txt"); ?></textarea>
                             </div>
                     </div>
                     <div class="row">
@@ -39,7 +39,7 @@
                         <form action="praesentationsmodus.php" method="post">
                         <div class="form-group">
                             <label for="praesentationsmodus">Name:</label>
-                            <input type="text" class="form-control" id="praesentationsmodus" name="praesentationsmodus" value='<?php echo file_get_contents("../praesentationsmodus.txt"); ?>'>
+                            <input type="text" class="form-control" id="praesentationsmodus" name="praesentationsmodus" value='<?php echo file_get_contents("../../praesentationsmodus.txt"); ?>'>
                             <button type="submit" class="form-control btn btn-primary mt-2">Präsentationsmodus ändern</button>
                         </div>
                         </form>
@@ -63,7 +63,7 @@
                         <form action="datei_delete.php" method="post">
                             <?php
                                 // Display all files in a directory
-                                $dir = "../";
+                                $dir = "../../";
                                 $files = scandir($dir);
                                 foreach ($files as $file) {
                                     if (pathinfo($file, PATHINFO_EXTENSION) == "pdf") {
@@ -81,11 +81,11 @@
                             <div class="row mt-4">
                                     <div class="col-2 pe-0 text-center">
                                         <h5>Dauer</h5>
-                                        <textarea class="form-control" name="pdfs-dauer" rows="10" placeholder="Sekunden"><?php echo file_get_contents("../pdfs_dauer.txt"); ?></textarea>
+                                        <textarea class="form-control" name="pdfs-dauer" rows="10" placeholder="Sekunden"><?php echo file_get_contents("../../pdfs_dauer.txt"); ?></textarea>
                                     </div>
                                     <div class="col ps-0 text-center">
                                         <h5>Dateinamen</h5>
-                                        <textarea class="form-control" name="pdfs-namen" rows="10" placeholder="Dateiname inkl. ".pdf""><?php echo file_get_contents("../pdfs.txt"); ?></textarea>
+                                        <textarea class="form-control" name="pdfs-namen" rows="10" placeholder="Dateiname inkl. ".pdf""><?php echo file_get_contents("../../pdfs.txt"); ?></textarea>
                                     </div>
                             </div>
                             <div class="row">

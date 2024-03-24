@@ -28,7 +28,7 @@
             </div>
         </div>
         <?php
-            if (file_get_contents("./praesentationsmodus.txt") == "") {
+            if (file_get_contents("../praesentationsmodus.txt") == "") {
                 include "obererteil_normal.html";
             }
             else {
