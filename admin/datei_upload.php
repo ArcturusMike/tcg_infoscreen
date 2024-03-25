@@ -30,7 +30,7 @@
         } 
         else {
             if (move_uploaded_file($_FILES["datei"]["tmp_name"], $targetFile)) {
-                echo "<p>Datei(en) " . basename($_FILES["datei"]["name"]) . " erfolgreich hochgeladen.</p>";
+                echo "<p>Datei " . basename($_FILES["datei"]["name"]) . " erfolgreich hochgeladen.</p>";
             } 
             else {
                 echo "<p>Sorry, there was an error uploading your file.</p>";

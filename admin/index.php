@@ -53,7 +53,7 @@
                         <h4>PDF-Upload</h4>
                         <p class="fw-semibold text-danger">Idealerweise A4-Hochformat.</p>
                         <form action="datei_upload.php" method="post" enctype="multipart/form-data">
-                            <input type="file" class="form-control-file" name="datei" accept=".pdf" multiple>
+                            <input type="file" class="form-control-file" name="datei" accept=".pdf">
                             <button type="submit" class="form-control btn btn-primary mt-2">Hochladen</button>
                         </form>
                     </div>
