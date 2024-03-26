@@ -54,7 +54,7 @@
         <div class="row row-rand" id="row-unten">
             <div class="col p-2 pb-3 ps-3 pe-3">
                 <div class="container-fluid rounded-3 bg-danger d-flex align-items-center h-100">
-                    <span class="fs-1">Hier könnte Lauftext stehen bzw. der Bereich ist noch ideenlos.</span>
+                    <marquee class="fs-1 fw-semibold"><?php echo file_get_contents("../dateien/lauftext.txt"); ?></marquee>
                 </div>
             </div>
         </div>
