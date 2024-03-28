@@ -56,16 +56,16 @@ body {
 }
 
 #tabelle-iframe {
-    width: calc(100%/1.3);
-    height: calc(100%/1.3);
-    transform: scale(1.3);
+    width: calc(100%/1.4);
+    height: calc(100%/1.4);
+    transform: scale(1.4);
     transform-origin: 0 0;
 }
 
 #spielplan-iframe {
-    width: calc(100%/1.2);
-    height: calc(100%/1.2);
-    transform: scale(1.2);
+    width: calc(100%/1.3);
+    height: calc(100%/1.3);
+    transform: scale(1.3);
     transform-origin: 0 0;
 }
 
