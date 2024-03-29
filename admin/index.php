@@ -97,6 +97,18 @@
                         </form>
                     </div>
                 </div>
+                <div class="row mt-4">
+                    <h2>Lauftext</h2>
+                    <p class="text-danger fw-semibold">Wichtig: Keine Zeilenumbrüche.</p>
+                    <div class="col">
+                        <form action="lauftext.php" method="post">
+                        <div class="form-group">
+                            <textarea class="form-control bg-secondary border border-dark" id="lauftext" name="lauftext" rows="5" placeholder='Lauftext'><?php echo file_get_contents("../../dateien/lauftext.txt"); ?></textarea>
+                            <button type="submit" class="form-control btn btn-primary mt-2">Lauftext ändern</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
