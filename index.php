@@ -11,7 +11,7 @@
 </head>
 <body onload="uhrzeit(); vorstandsdienst(); rotationen();">
     <?php /*error_reporting(0);*/ ?>
-    <div class="container-fluid main-container bg-dark">
+    <div class="container-fluid main-container">
         <div class="row row-rand" id="row-oben">
             <div class="col p-2 pt-3 ps-3 pe-3">            
                 <div class="container-fluid h-100 bg-danger rounded-3">
