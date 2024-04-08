@@ -11,7 +11,7 @@
     <?php /*error_reporting(0);*/ ?>
     <div class="container-fluid">
         <h1>Infoscreen-Administration</h1>
-        <p class="bg-warning p-3 rounded-3 text-dark">Bitte beim Eintragen in die Textfelder darauf achten, dass keine unnötigen Leerzeichen, Leerzeilen, etc. vorhanden sind. Ich weiß nicht, was dann passieren wird, ich hab es nie getestet.</p>
+        <p class="bg-warning p-3 rounded-3 text-dark">Bitte beim Eintragen in die Textfelder darauf achten, dass keine unnötigen Leerzeichen, Leerzeilen, etc. vorhanden sind. Ich weiß nicht, was dann passieren wird, ich hab es nie getestet und will es auch nicht testen.</p>
         <div class="row">
             <div class="col">
                 <form action="artikel.php" method="post">
@@ -35,7 +35,7 @@
                 <div class="row mt-4">
                     <h2>Präsentations-Modus</h2>
                     <p class="text-danger fw-semibold">Wenn nur die Platzreservierung unten und eine PDF oben angezeigt werden soll, den Dateinamen hier eintragen. Ist das Feld leer, wird der Infoscreen wie üblich angezeigt. Bis der gewählte Modus übernommen wird, dauert es max. 10 Minuten.</p>
-                    <p class="text-danger fw-semibold">Nur Seite 1 wird angezeigt! (Falls die PDF mehrere Seiten hat)</p>
+                    <p class="text-danger fw-semibold">Falls die PDF mehrere Seiten hat: Alle 20 Sekunden wird die nächste Seite angezeigt.</p>
                     <div class="col">
                         <form action="praesentationsmodus.php" method="post">
                         <div class="form-group">

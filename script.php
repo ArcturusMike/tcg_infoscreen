@@ -35,12 +35,32 @@
             echo "'The file does not exist.'";
         }
     }
+
+    function countPDFpages($filename) {
+        if ($filename != "") {
+            $path = "../dateien/" . $filename;
+            $pdf = file_get_contents($path); 
+            $number = preg_match_all("/\/Page\W/", $pdf, $dummy); 
+
+            echo $number; 
+        }
+        else {
+            echo "0";
+        }
+    }
 ?>
 
 <script>
     function uhrzeit() {
         let wochentage = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
         let monate = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;  // add zero in front of numbers < 10
+            }
+            return i;
+        }
 
         let today = new Date();
         let wochentag = wochentage[today.getDay()];
@@ -63,13 +83,6 @@
         setTimeout(uhrzeit, 1000);
     }
   
-    function checkTime(i) {
-        if (i < 10) {
-            i = "0" + i;  // add zero in front of numbers < 10
-        }
-        return i;
-    }
-
     function vorstandsdienst() {
         let vorstand = {
             19: "Rohrmeister Gerald",
@@ -179,13 +192,31 @@
         changePDFSources();
     }
 
-    function rotationen() {
-        meisterschaftsRotation();
-        homepageRotation();
-        pdfRotation();
+    function praesentation_seitenwechsel() {
+        let rotationInterval = 20000; // Interval in milliseconds
+        let currentPage = 1;
+        let totalPages = <?php countPDFpages(file_get_contents("../dateien/praesentationsmodus.txt")); ?>;
+
+        function rotatePages() {
+            currentPage = (currentPage % totalPages) + 1;
+            document.getElementById("praesentations-container").innerHTML = '<iframe id="iframe-praesentation" class="w-100 h-100 rounded-3" src="../dateien/' + <?php echo '"' . file_get_contents("../dateien/praesentationsmodus.txt") . '"' ?> + '#toolbar=0&scrollbar=0&view=Fit&page=' + currentPage + '" scrolling="no"></iframe>';
+        }
+
+        if (totalPages > 0) {
+            setInterval(rotatePages, rotationInterval);
+        }
     }
 
-
+    function rotationen() {
+        <?php
+            if (file_get_contents("../dateien/praesentationsmodus.txt") == "") {
+                echo "meisterschaftsRotation(); homepageRotation(); pdfRotation();";
+            }
+            else {
+                echo "praesentation_seitenwechsel();";
+            }
+        ?>
+    }
 
     // Function to reload the page if the current time is xx:10, xx:20, xx:30, etc.
     function seiteNeuladen() {
