@@ -182,7 +182,7 @@
     function praesentation_seitenwechsel() {
         let rotationInterval = 20000; // Interval in milliseconds
         let currentPage = 1;
-        let totalPages = <?php echo int(file_get_contents("../dateien/praesentationsmodus.txt")); ?>;
+        let totalPages = <?php echo intval(file_get_contents("../dateien/praesentationsmodus.txt")); ?>;
 
         function rotatePages() {
             currentPage = (currentPage % totalPages) + 1;
