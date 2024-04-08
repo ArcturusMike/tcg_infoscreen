@@ -189,7 +189,9 @@
             document.getElementById("praesentations-container").innerHTML = '<iframe id="iframe-praesentation" class="w-100 h-100 rounded-3" src="../dateien/' + <?php echo '"' . file_get_contents("../dateien/praesentationsmodus.txt") . '"' ?> + '#toolbar=0&scrollbar=0&view=Fit&page=' + currentPage + '" scrolling="no"></iframe>';
         }
 
-        setInterval(rotatePages, rotationInterval);
+        if (totalPages > 1) {
+            setInterval(rotatePages, rotationInterval);
+        }
     }
 
     function rotationen() {
