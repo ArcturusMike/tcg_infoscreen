@@ -8,11 +8,17 @@
 <body>
 <?php
     $praesentationsmodus = $_POST["praesentationsmodus"];
+    $praesentationsmodus_seiten = $_POST["praesentationsmodus-seiten"];
 
     // Write content to praesentationsmodus file
     $praesentationsmodus_file = fopen("../../dateien/praesentationsmodus.txt", "w") or die("Unable to open file!");
     fwrite($praesentationsmodus_file, $praesentationsmodus);
     fclose($praesentationsmodus_file);
+
+    // Write content to praesentationsmodus_seiten file
+    $praesentationsmodus_seiten_file = fopen("../../dateien/praesentationsmodus_seiten.txt", "w") or die("Unable to open file!");
+    fwrite($praesentationsmodus_seiten_file, $praesentationsmodus_seiten);
+    fclose($praesentationsmodus_seiten_file);
 
     if ($praesentationsmodus == "") {
         echo "<p>Präsentationsmodus erfolgreich DEAKTIVIERT.</p>";

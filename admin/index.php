@@ -41,8 +41,12 @@
                         <div class="form-group">
                             <label for="praesentationsmodus">Name der Datei, die angezeigt werden soll:</label>
                             <input type="text" class="form-control bg-secondary border border-dark" id="praesentationsmodus" name="praesentationsmodus" value='<?php echo file_get_contents("../../dateien/praesentationsmodus.txt"); ?>'>
-                            <button type="submit" class="form-control btn btn-primary mt-2">Präsentationsmodus ändern</button>
                         </div>
+                        <div class="form-group mt-2">
+                            <label for="praesentationsmodus-seiten">Die ersten [x] Seiten sollen angezeigt werden:</label>
+                            <input type="number" class="form-control bg-secondary border border-dark" id="praesentationsmodus-seiten" name="praesentationsmodus-seiten" min=1 value=<?php echo file_get_contents("../../dateien/praesentationsmodus_seiten.txt"); ?>>
+                        </div>
+                        <button type="submit" class="form-control btn btn-primary mt-3">Präsentationsmodus ändern</button>
                         </form>
                     </div>
                 </div>

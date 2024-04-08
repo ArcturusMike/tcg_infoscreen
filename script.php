@@ -35,19 +35,6 @@
             echo "'The file does not exist.'";
         }
     }
-
-    function countPDFpages($filename) {
-        if ($filename != "") {
-            $path = "../dateien/" . $filename;
-            $pdf = file_get_contents($path); 
-            $number = preg_match_all("/\/Page\W/", $pdf, $dummy); 
-
-            echo $number; 
-        }
-        else {
-            echo "0";
-        }
-    }
 ?>
 
 <script>
@@ -195,16 +182,14 @@
     function praesentation_seitenwechsel() {
         let rotationInterval = 20000; // Interval in milliseconds
         let currentPage = 1;
-        let totalPages = <?php countPDFpages(file_get_contents("../dateien/praesentationsmodus.txt")); ?>;
+        let totalPages = <?php echo int(file_get_contents("../dateien/praesentationsmodus.txt")); ?>;
 
         function rotatePages() {
             currentPage = (currentPage % totalPages) + 1;
             document.getElementById("praesentations-container").innerHTML = '<iframe id="iframe-praesentation" class="w-100 h-100 rounded-3" src="../dateien/' + <?php echo '"' . file_get_contents("../dateien/praesentationsmodus.txt") . '"' ?> + '#toolbar=0&scrollbar=0&view=Fit&page=' + currentPage + '" scrolling="no"></iframe>';
         }
 
-        if (totalPages > 0) {
-            setInterval(rotatePages, rotationInterval);
-        }
+        setInterval(rotatePages, rotationInterval);
     }
 
     function rotationen() {
