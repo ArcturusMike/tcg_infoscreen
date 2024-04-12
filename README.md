@@ -28,4 +28,6 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikalen Bildschirm.
     - `9,19,29,39,49,59 6-21 * * * ping -c 1 www.orf.at && rm -r /var/www/html/tcg_infoscreen/ && git clone https://github.com/ArcturusMike/tcg_infoscreen.git /var/www/html/tcg_infoscreen/ && service apache2 restart`
 17. 4K beim Raspberry in der Raspi-Config aktivieren
 18.  Via Screen Configuration: Auflösung 3840x2160 und dann das Bild drehen
-19. Bildschirm dunkel 22-06 Uhr via HDMI-CEC [einstellen](https://pimylifeup.com/raspberrypi-hdmi-cec/) und crontab einrichten
+19. Bildschirm dunkel 22-06 Uhr via HDMI-CEC [einstellen](https://pimylifeup.com/raspberrypi-hdmi-cec/) und folgende crontabs einrichten:
+    - `0 22 * * * echo 'standby 0.0.0.0' | /usr/bin/cec-client -s -d 1`
+    - `0 8 * * * echo 'on 0.0.0.0' | /usr/bin/cec-client -s -d 1`
