@@ -31,3 +31,10 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikalen Bildschirm.
 19. Bildschirm dunkel 22-06 Uhr via HDMI-CEC [einstellen](https://pimylifeup.com/raspberrypi-hdmi-cec/) und folgende crontabs einrichten:
     - `0 22 * * * echo 'standby 0.0.0.0' | /usr/bin/cec-client -s -d 1`
     - `0 8 * * * echo 'on 0.0.0.0' | /usr/bin/cec-client -s -d 1`
+
+## To do:
+
+- [ ] Meisterschaftsspiele alle 2 Minuten neu laden, falls "500 Internal Server Error" o.Ä.
+- [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
+- [ ] Vorstandsdienst konfigurierbar machen
+- [ ] Präsentationsmodus auf nur 1 Konfig-Datei umbauen
