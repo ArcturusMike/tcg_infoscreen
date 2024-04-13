@@ -205,12 +205,12 @@
         ?>
     }
 
-    // Function to reload the page if the current time is xx:10, xx:20, xx:30, etc.
+    // Function to reload the page if the current time is xx:05, xx:10, xx:15, xx:20, etc.
     function seiteNeuladen() {
         const currentDate = new Date();
         const minutes = currentDate.getMinutes();
     
-        if (minutes % 10 === 0) {
+        if (minutes % 5 === 0) {
         window.location.reload(true);
         }
     }
