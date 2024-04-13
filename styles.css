@@ -56,9 +56,9 @@ body {
 }
 
 #tabelle-iframe {
-    width: calc(100%/1.5);
-    height: calc(100%/1.5);
-    transform: scale(1.5);
+    width: calc(100%/1.4);
+    height: calc(100%/1.4);
+    transform: scale(1.4);
     transform-origin: 0 0;
 }
 
@@ -77,9 +77,9 @@ body {
 }
 
 #wetterbericht-iframe {
-    width: calc(100%/2.1);
-    height: calc(100%/2.1);
-    transform: scale(2.1);
+    width: calc(100%/2.3);
+    height: calc(100%/2.3);
+    transform: scale(2.3);
     transform-origin: 0 0;
 }
 
