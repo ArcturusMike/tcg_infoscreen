@@ -40,7 +40,9 @@
 <script>
     function uhrzeit() {
         let wochentage = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
-        let monate = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
+        //let monate = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
+        let monate = ["Jan","Feb","Mär","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez"];
+        //let monate = ["01","02","03","04","05","06","07","08","09","10","11","12"];
 
         function checkTime(i) {
             if (i < 10) {
@@ -54,7 +56,7 @@
         let tag = today.getDate();
         tag = checkTime(tag);
         let monat = monate[today.getMonth()]
-        let date = tag + ". " + monat;
+        let date = tag + ". " + monat + ".";
 
         let stunden = today.getHours();
         stunden = checkTime(stunden);
@@ -63,7 +65,7 @@
         let sekunden = today.getSeconds();
         sekunden = checkTime(sekunden);
         let time = stunden + ":" + minuten + "<span style='font-size: 16pt;'>:" + sekunden + "</span>";
-        let dateTime = wochentag + ", " + date + ' &ndash; ' + time;
+        let dateTime = wochentag + ", " + date + '&nbsp;&nbsp;&ndash;&nbsp;&nbsp;' + time;
 
         document.getElementById("uhrzeit").innerHTML = dateTime;
 
