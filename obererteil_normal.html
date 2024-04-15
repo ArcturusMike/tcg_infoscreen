@@ -43,13 +43,14 @@
                     <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><span class="fs-1 fw-semibold text-light">Wetter</span></div>
                 </div>
             </div>
-            <div class="row row-iframe rounded-3">
+            <div class="row row-iframe-wetterbericht rounded-3">
                 <div class="col p-0">
-                    <!--
-                    <div class="container-fluid p-0 h-100"><iframe class="rounded-bottom-3" id="wetterradar-iframe" src="https://radar.wo-cloud.com/desktop/embedded?wrx=46.573,14.635&wry=46.573,14.635&timeZone=Europe/Vienna&wrm=12" scrolling="no"></iframe></div>
-                    -->
                     <div class="container-fluid p-0 h-100"><iframe class="rounded-bottom-3" id="wetterbericht-iframe" src="https://api.wetteronline.de/wetterwidget?gid=a9101&modeid=CW2&seourl=goesselsdorf&locationname=Gösselsdorf&lang=de" scrolling="no"></iframe></div>
-                    
+                </div>
+            </div>
+            <div class="row row-iframe-wetterradar rounded-3">
+                <div class="col p-0">
+                    <div class="container-fluid p-0 h-100"><iframe class="rounded-bottom-3" id="wetterradar-iframe" src="https://radar.wo-cloud.com/desktop/embedded?wrx=46.573,14.635&wry=46.573,14.635&timeZone=Europe/Vienna&wrm=10" scrolling="no"></iframe></div>
                 </div>
             </div>
         </div>

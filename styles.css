@@ -14,6 +14,14 @@ body {
     height: calc(100% - 70px);
 }
 
+.row-iframe-wetterbericht {
+    height: calc(50% - 35px);
+}
+
+.row-iframe-wetterradar {
+    height: calc(50% - 35px);
+}
+
 .row-rand {
     height: 3%;
 }
@@ -70,16 +78,16 @@ body {
 }
 
 #wetterradar-iframe {
-    width: calc(100%/1.4);
-    height: calc(100%/1.4);
-    transform: scale(1.4);
+    width: calc(100%/1.0);
+    height: calc(100%/1.0);
+    transform: scale(1.0);
     transform-origin: 0 0;
 }
 
 #wetterbericht-iframe {
-    width: calc(100%/1.7);
-    height: calc(100%/1.7);
-    transform: scale(1.7);
+    width: calc(100%/1.6);
+    height: calc(100%/1.6);
+    transform: scale(1.6);
     transform-origin: 0 0;
 }
 

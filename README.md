@@ -34,7 +34,6 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikalen Bildschirm.
 
 ## To do:
 
-- [ ] Wetterbericht und Wetterradar durchrotieren jede Minute
 - [ ] Tennisergebnisse einbinden
 - [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
 - [ ] Vorstandsdienst konfigurierbar machen
