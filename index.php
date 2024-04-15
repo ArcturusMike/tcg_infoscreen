@@ -12,20 +12,22 @@
 <body onload="uhrzeit(); vorstandsdienst(); rotationen();">
     <?php /*error_reporting(0);*/ ?>
     <div class="container-fluid main-container">
+        <!--
         <div class="row row-rand" id="row-oben">
             <div class="col p-2 pt-3 ps-3 pe-3">            
                 <div class="container-fluid h-100 bg-danger rounded-3">
                     <div class="row h-100 d-flex align-items-center ps-2 pe-2 text-light">
                         <div class="col p-0 h-100 text-start d-flex align-items-center">
-                            <!-- <div class="container-fluid fs-1 fw-semibold" id="uhrzeit"></div> -->
+                            <div class="container-fluid fs-1 fw-semibold" id="uhrzeit"></div>
                         </div>
                         <div class="col p-0 h-100 text-end d-flex align-items-center">
-                            <!-- <div class="container-fluid fs-1 fw-semibold">Vorstands-Wochendienst:&nbsp;&nbsp;<span class="fs-1 fw-semibold" id="vorstand"></span></div> -->
+                            <div class="container-fluid fs-1 fw-semibold">Vorstands-Wochendienst:&nbsp;&nbsp;<span class="fs-1 fw-semibold" id="vorstand"></span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        -->
         <?php
             if (file_get_contents("../dateien/praesentationsmodus.txt") == "") {
                 include "obererteil_normal.html";

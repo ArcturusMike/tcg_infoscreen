@@ -34,7 +34,11 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikalen Bildschirm.
 
 ## To do:
 
-- [ ] Meisterschaftsspiele alle 2 Minuten neu laden, falls "500 Internal Server Error" o.Ä.
+- [ ] Wetterbericht und Wetterradar durchrotieren jede Minute
+- [ ] Tennisergebnisse einbinden
 - [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
 - [ ] Vorstandsdienst konfigurierbar machen
 - [ ] Präsentationsmodus auf nur 1 Konfig-Datei umbauen
+- [ ] Konfiguration erreichbar machen via Tailscale o.Ä.?
+- [ ] Platzreservierung nach oben?
+- [ ] Meisterschaft Light Mode?
