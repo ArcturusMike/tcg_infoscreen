@@ -28,16 +28,8 @@
             </div>
         </div>
         -->
-        <?php
-            if (file_get_contents("../dateien/praesentationsmodus.txt") == "") {
-                include "obererteil_normal.html";
-            }
-            else {
-                include "obererteil_praesentation.php";
-            }
-        ?>
         <div class="row row-mitte" id="row-platzreservierung">
-            <div class="col p-2 ps-3 pe-3">
+            <div class="col p-2 pt-3 ps-3 pe-3">
                 <div class="container-fluid h-100 bg-success rounded-3">
                     <div class="row row-title rounded-3">
                         <div class="col p-0">
@@ -53,6 +45,14 @@
             </div>
         </div>
 
+        <?php
+            if (file_get_contents("../dateien/praesentationsmodus.txt") == "") {
+                include "obererteil_normal.html";
+            }
+            else {
+                include "obererteil_praesentation.php";
+            }
+        ?>
 
         <div class="row row-rand" id="row-unten">
             <div class="col-4 p-2 pb-3 ps-3">            
