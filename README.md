@@ -23,9 +23,9 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikalen Bildschirm.
     - `@reboot sleep 10 && DISPLAY=:0 chromium-browser --hide-crash-restore-bubble --start-fullscreen http://localhost/tcg_infoscreen/` (HDMI muss angeschlossen sein, damit es funktioniert!)
 15. Damit es einen Ordner zum Löschen später gibt, das Repository manuell clonen:
     - `sudo git clone https://github.com/ArcturusMike/tcg_infoscreen.git /var/www/html/tcg_infoscreen/`
-(16. Git Autoclone alle 10 Minuten einer Stunde, nur wenn Internetverbindung besteht:
+16. ~~Git Autoclone alle 10 Minuten einer Stunde, nur wenn Internetverbindung besteht:~~
     - `sudo crontab -e` und dort:
-    - `9,19,29,39,49,59 6-21 * * * ping -c 1 www.orf.at && rm -r /var/www/html/tcg_infoscreen/ && git clone https://github.com/ArcturusMike/tcg_infoscreen.git /var/www/html/tcg_infoscreen/ && service apache2 restart`)
+    - `#9,19,29,39,49,59 6-21 * * * ping -c 1 www.orf.at && rm -r /var/www/html/tcg_infoscreen/ && git clone https://github.com/ArcturusMike/tcg_infoscreen.git /var/www/html/tcg_infoscreen/ && service apache2 restart`
 17. 4K beim Raspberry in der Raspi-Config aktivieren
 18.  Via Screen Configuration: Auflösung 3840x2160 und dann das Bild drehen
 19. Bildschirm dunkel 22-06 Uhr via HDMI-CEC [einstellen](https://pimylifeup.com/raspberrypi-hdmi-cec/) und folgende crontabs einrichten:
