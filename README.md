@@ -38,6 +38,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikalen Bildschirm.
 - [ ] Vorstandsdienst konfigurierbar machen
 - [ ] Bilder anzeigbar machen (Diashow)
 - [ ] Tennis-Live-Ergebnisse einbinden
+- [ ] Lauftext: Marquee durch CSS-Animation ersetzen damit flüssig
 - [ ] Meisterschaft Light Mode?
 - [ ] Präsentationsmodus auf nur 1 Konfig-Datei umbauen
 - [ ] Konfiguration erreichbar machen via Tailscale o.Ä.?
