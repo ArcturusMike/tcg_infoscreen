@@ -34,10 +34,10 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikalen Bildschirm.
 
 ## To do:
 
-- [ ] Tennis-Live-Ergebnisse einbinden
 - [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
 - [ ] Vorstandsdienst konfigurierbar machen
+- [ ] Bilder anzeigbar machen (Diashow)
+- [ ] Tennis-Live-Ergebnisse einbinden
+- [ ] Meisterschaft Light Mode?
 - [ ] Präsentationsmodus auf nur 1 Konfig-Datei umbauen
 - [ ] Konfiguration erreichbar machen via Tailscale o.Ä.?
-- [x] Platzreservierung nach oben?
-- [ ] Meisterschaft Light Mode?
