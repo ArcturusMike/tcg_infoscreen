@@ -28,29 +28,19 @@
             </div>
         </div>
         -->
-        <div class="row row-mitte" id="row-platzreservierung">
-            <div class="col p-2 pt-3 ps-3 pe-3">
-                <div class="container-fluid h-100 bg-success rounded-3">
-                    <div class="row row-title rounded-3">
-                        <div class="col p-0">
-                            <div class="container-fluid h-100 d-flex align-items-center justify-content-center"><span class="fs-1 fw-semibold text-light">Reservierung Platz 4</span></div>
-                        </div>
-                    </div>
-                    <div class="row row-iframe rounded-3">
-                        <div class="col p-0">
-                            <div class="container-fluid p-0 h-100"><iframe class="rounded-bottom-3" id="platzreservierung-iframe" src="https://goesselsdorf.tennisplatz.info/infoscreen/fa50be7dd32606f936ffd880c84a498c6f8cacb4?days=8&refresh=1" scrolling="no"></iframe></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <?php
+            
+            // Normaler Modus
             if (file_get_contents("../dateien/praesentationsmodus.txt") == "") {
-                include "obererteil_normal.html";
+                include "pdf-homepage.html";
+                include "platzreservierung.html";
+                include "meisterschaft-wetter.html";
             }
+            // Präsentationsmodus
             else {
-                include "obererteil_praesentation.php";
+                include "platzreservierung.html";
+                include "praesentation.php";
             }
         ?>
 
