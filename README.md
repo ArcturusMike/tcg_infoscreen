@@ -14,9 +14,9 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikalen Bildschirm.
 9. `sudo mkdir /var/www/html/dateien/ && cd /var/www/html/dateien/ && sudo touch artikel_dauer.txt artikel.txt pdfs_dauer.txt pdfs.txt praesentationsmodus.txt praesentationsmodus_seiten.txt lauftext.txt vorstandsdienst.txt && sudo chmod -R 777 /var/www/html/dateien/`
 10. Unclutter-Autostart einrichten ([Link](https://ostechnix.com/auto-hide-mouse-pointer-using-unclutter-after-a-certain-time/))
 11. Automatische Sicherheitsupdates aktivieren ([Link](https://www.elektronik-kompendium.de/sites/raspberry-pi/2002101.htm))
-12. Täglicher Reboot: (Schaltet das vll. den Bildschirm ein?)
+12. ~~Täglicher Reboot: (Schaltet das vll. den Bildschirm ein?)~~
     - `sudo crontab -e` und dort hinzufügen:
-    - `45 7 * * * /sbin/shutdown -r now`
+    - `#45 7 * * * /sbin/shutdown -r now`
 13. Manuelles Start-Skript für Infoscreen [erstellen](https://askubuntu.com/questions/475081/how-to-create-a-launcher-to-execute-a-terminal-command)
 14. Browser Autostart:
     - `crontab -e` und dort:
