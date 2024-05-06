@@ -1,5 +1,5 @@
 # TC Gösselsdorf Infoscreen
-Der Infoscreen läuft auf einem Raspberry Pi und einem vertikalen Bildschirm.
+Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bildschirm.
 
 ## Raspberry Pi Einrichtung
 
@@ -13,10 +13,10 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikalen Bildschirm.
 8. `sudo apt update && sudo apt install apache2 php8.2 unclutter git`
 9. `sudo mkdir /var/www/html/dateien/ && cd /var/www/html/dateien/ && sudo touch artikel_dauer.txt artikel.txt pdfs_dauer.txt pdfs.txt praesentationsmodus.txt praesentationsmodus_seiten.txt lauftext.txt vorstandsdienst.txt && sudo chmod -R 777 /var/www/html/dateien/`
 10. Unclutter-Autostart einrichten ([Link](https://ostechnix.com/auto-hide-mouse-pointer-using-unclutter-after-a-certain-time/))
-11. Automatische Sicherheitsupdates aktivieren ([Link](https://www.elektronik-kompendium.de/sites/raspberry-pi/2002101.htm))
+11. ~~Automatische Sicherheitsupdates aktivieren ([Link](https://www.elektronik-kompendium.de/sites/raspberry-pi/2002101.htm))~~
 12. ~~Täglicher Reboot: (Schaltet das vll. den Bildschirm ein?)~~
     - `sudo crontab -e` und dort hinzufügen:
-    - `#45 7 * * * /sbin/shutdown -r now`
+    - `45 7 * * * /sbin/shutdown -r now`
 13. Manuelles Start-Skript für Infoscreen [erstellen](https://askubuntu.com/questions/475081/how-to-create-a-launcher-to-execute-a-terminal-command)
 14. Browser Autostart:
     - `crontab -e` und dort:
@@ -25,7 +25,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikalen Bildschirm.
     - `sudo git clone https://github.com/ArcturusMike/tcg_infoscreen.git /var/www/html/tcg_infoscreen/`
 16. ~~Git Autoclone alle 10 Minuten einer Stunde, nur wenn Internetverbindung besteht:~~
     - `sudo crontab -e` und dort:
-    - `#9,19,29,39,49,59 6-21 * * * ping -c 1 www.orf.at && rm -r /var/www/html/tcg_infoscreen/ && git clone https://github.com/ArcturusMike/tcg_infoscreen.git /var/www/html/tcg_infoscreen/ && service apache2 restart`
+    - `9,19,29,39,49,59 6-21 * * * ping -c 1 www.orf.at && rm -r /var/www/html/tcg_infoscreen/ && git clone https://github.com/ArcturusMike/tcg_infoscreen.git /var/www/html/tcg_infoscreen/ && service apache2 restart`
 17. 4K beim Raspberry in der Raspi-Config aktivieren
 18.  Via Screen Configuration: Auflösung 3840x2160 und dann das Bild drehen
 19. Bildschirm dunkel 22-06 Uhr via HDMI-CEC [einstellen](https://pimylifeup.com/raspberrypi-hdmi-cec/) und folgende crontabs einrichten:
@@ -34,8 +34,8 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikalen Bildschirm.
 
 ## To do:
 
-- [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
 - [ ] Vorstandsdienst konfigurierbar machen
+- [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
 - [ ] Bilder anzeigbar machen (Diashow)
 - [ ] Tennis-Live-Ergebnisse einbinden
 - [ ] Lauftext: Marquee durch CSS-Animation ersetzen damit flüssig
