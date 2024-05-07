@@ -74,8 +74,8 @@
   
     function vorstandsdienst() {
         let vorstand = {
-            19: "Rohrmeister Gerald",
-            20: "Mayer Marko",
+            19: "Mayer Marko",
+            20: "Rohrmeister Gerald",
             21: "Wernig Rene",
             22: "Riepl Jan",
             23: "Nachbar Patrick",
