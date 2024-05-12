@@ -103,11 +103,11 @@
         const today = new Date();
         const januaryFirst = new Date(today.getFullYear(), 0, 1);
         const daysUntilToday = Math.floor((today - januaryFirst) / (24 * 60 * 60 * 1000)) + 1;
-        const weekNumber = Math.ceil((daysUntilToday + januaryFirst.getDay()) / 7);
+        const weekNumber = Math.ceil((daysUntilToday + januaryFirst.getDay() - 1) / 7);
 
         let dienstname = vorstand[weekNumber];
-        if (dienstname == undefined) {
-            dienstname = "Riepl Jan";
+        if (dienstname === undefined) {
+            dienstname = "nicht besetzt";
         }
 
 
