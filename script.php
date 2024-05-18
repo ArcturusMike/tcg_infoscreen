@@ -196,10 +196,44 @@
         }
     }
 
+    function tennisschuhe() {
+        let colorToggle = false;
+        let intervalId;
+        const targetDiv = document.getElementById('ausschreibungen');
+        
+        function alternateColors() {
+            if (colorToggle) {
+                targetDiv.style.backgroundColor = "red";
+            } else {
+                targetDiv.style.backgroundColor = "blue";
+            }
+            colorToggle = !colorToggle;
+        }
+        
+        function checkDateTime() {
+            const now = new Date();
+            const dayOfWeek = now.getDay(); // Sunday is 0
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const month = now.getMonth(); // January is 0, May is 4, July is 6
+            
+            // nur im Mai-Juli Sonntags zwischen 08:00 und 08:45
+            if (dayOfWeek === 0 && (hours === 8 && minutes >= 0 && minutes <= 45) && (month >= 4 && month <= 6)) {
+                targetDiv.classList.remove("bg-warning");
+                targetDiv.classList.add("text-white");
+                targetDiv.innerHTML = "<h1 style='font-size: 90pt; text-align: center;padding-top: 35%;'><p class='fs-1 text-center'>Viel Glück und Erfolg an die Meisterschaftsspieler!</p><br>Bei<br>Auswärtspartien:<br><br><b>TENNISSCHUHE<br>mitnehmen!!!</b><br><br><p class='fs-3 text-center'>Um 08:50 Uhr wird diese Meldung deaktiviert.</p></h1>";
+                intervalId = setInterval(alternateColors, 500);
+            }
+        }
+
+        // Call the function initially to check the current time
+        checkDateTime();
+    }
+
     function rotationen() {
         <?php
             if (file_get_contents("../dateien/praesentationsmodus.txt") == "") {
-                echo "meisterschaftsRotation(); homepageRotation(); pdfRotation();";
+                echo "meisterschaftsRotation(); homepageRotation(); pdfRotation(); tennisschuhe()";
             }
             else {
                 echo "praesentation_seitenwechsel();";
