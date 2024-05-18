@@ -233,7 +233,7 @@
     function rotationen() {
         <?php
             if (file_get_contents("../dateien/praesentationsmodus.txt") == "") {
-                echo "meisterschaftsRotation(); homepageRotation(); pdfRotation(); tennisschuhe()";
+                echo "meisterschaftsRotation(); homepageRotation(); pdfRotation(); tennisschuhe();";
             }
             else {
                 echo "praesentation_seitenwechsel();";
