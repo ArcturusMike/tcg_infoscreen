@@ -41,7 +41,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 - [ ] Vorstandsdienst konfigurierbar machen
 - [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
 - [ ] Bilder anzeigbar machen (Diashow)
-- [ ] Tennis-Live-Ergebnisse einbinden
+- [ ] Tennis-Live-Ergebnisse einbinden (https://ls.sir.sportradar.com/tennisnet/de/tennis/atp geht vielleicht irgendwie)
 - [ ] Lauftext: Marquee durch CSS-Animation ersetzen damit flüssig
 - [ ] Meisterschaft Light Mode?
 - [ ] Präsentationsmodus auf nur 1 Konfig-Datei umbauen
