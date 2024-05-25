@@ -26,8 +26,12 @@ body {
     height: 3%;
 }
 
-#row-obererteil {
+#row-praesentation {
     height: 65%;
+}
+
+#row-tennisschuhe {
+    height: 41%;
 }
 
 #row-pdf-homepage {

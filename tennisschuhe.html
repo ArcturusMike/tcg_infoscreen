@@ -1,0 +1,29 @@
+<div class="row row-mitte" id="row-tennisschuhe">
+    <div class="col p-2 ps-3 pe-3">
+        <div class="container-fluid h-100 rounded-3" id="tennisschuhe">
+            <h1 style='font-size: 130pt; text-align: center'>
+                <p style='font-size: 40pt; padding-top: 3%;'>Viel Glück und Erfolg an die Meisterschaftsspieler!<br><br><br></p>
+                <p>Bei<br>Auswärtspartien:<br><br><b>TENNISSCHUHE<br>mitnehmen!!!</b></p>
+                <p class='fs-2'><br><br><br>Um 08:50 Uhr wird diese Meldung deaktiviert.</p>
+            </h1>
+        </div>
+    </div>
+</div>
+
+<script>
+    let colorToggle = false;
+    const targetDiv = document.getElementById('tennisschuhe');
+    
+    function alternateColors() {
+        if (colorToggle) {
+            targetDiv.style.backgroundColor = "red";
+            targetDiv.style.color = "white";
+        } else {
+            targetDiv.style.backgroundColor = "yellow";
+            targetDiv.style.color = "black";
+        }
+        colorToggle = !colorToggle;
+    }
+
+    setInterval(alternateColors, 500);
+</script>

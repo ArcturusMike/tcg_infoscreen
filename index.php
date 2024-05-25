@@ -30,19 +30,31 @@
         -->
 
         <?php
+            $now = new DateTime();
+            $dayOfWeek = $now->format('w'); // Sunday is 0
+            $hours = $now->format('G'); // 24-hour format of an hour without leading zeros
+            $minutes = $now->format('i'); // Minutes with leading zeros
+            $month = $now->format('n'); // January is 1, May is 5, July is 7
             
+            // Präsentationsmodus
+            if (file_get_contents("../dateien/praesentationsmodus.txt") != "") {
+                include "platzreservierung.html";
+                include "praesentation.php";
+                include "uhrzeit-lauftext.php";
+            }
+            // Tennisschuhe-Erinnerung im Mai-Juli Sonntags zwischen 08:00 und 08:45
+            else if ($dayOfWeek == 0 && ($hours == 8 && $minutes >= 0 && $minutes <= 45) && ($month >= 5 && $month <= 7)) {
+                include "platzreservierung.html";
+                include "tennisschuhe.html";
+                include "uhrzeit-lauftext.php";
+                include "meisterschaft-wetter.html";
+            }
             // Normaler Modus
-            if (file_get_contents("../dateien/praesentationsmodus.txt") == "") {
+            else {
                 include "pdf-homepage.html";
                 include "platzreservierung.html";
                 include "uhrzeit-lauftext.php";
                 include "meisterschaft-wetter.html";
-            }
-            // Präsentationsmodus
-            else {
-                include "platzreservierung.html";
-                include "praesentation.php";
-                include "uhrzeit-lauftext.php";
             }
 
         ?>
