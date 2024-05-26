@@ -11,6 +11,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 6. Die CPU- & RAM-Widgets in die Leiste packen
 7. Bei Chromium `Adblock` und `I don’t care about cookies` installieren
 8. `sudo apt update && sudo apt install apache2 php8.2 unclutter git`
+    - In `/etc/php/8.2/apache2/php.ini` die `date.timezone = Europe/Vienna` setzen und dann `sudo service apache2 restart` machen
 9.  `sudo mkdir /var/www/html/dateien/ && cd /var/www/html/dateien/ && sudo touch artikel_dauer.txt artikel.txt pdfs_dauer.txt pdfs.txt praesentationsmodus.txt praesentationsmodus_seiten.txt lauftext.txt vorstandsdienst.txt && sudo chmod -R 777 /var/www/html/dateien/`
 10. Unclutter-Autostart einrichten ([Link](https://ostechnix.com/auto-hide-mouse-pointer-using-unclutter-after-a-certain-time/))
 11. ~~Automatische Sicherheitsupdates aktivieren ([Link](https://www.elektronik-kompendium.de/sites/raspberry-pi/2002101.htm))~~
