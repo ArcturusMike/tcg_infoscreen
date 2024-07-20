@@ -11,6 +11,7 @@
     <?php /*error_reporting(0);*/ ?>
     <div class="container-fluid">
         <h1>Infoscreen-Administration</h1>
+        <p class="bg-warning p-3 rounded-3 text-dark">Der Infoscreen wird alle 5 Minuten NEU GELADEN, d.h. die Schleifen fangen wieder von vorne an. Wenn die Anzeigedauern falsch eingestellt werden, kann es sein, dass nicht alles angezeigt wird, bevor die Seite neu geladen wird!</p>
         <p class="bg-warning p-3 rounded-3 text-dark">Bitte beim Eintragen in die Textfelder darauf achten, dass keine unnötigen Leerzeichen, Leerzeilen, etc. vorhanden sind. Ich weiß nicht, was dann passieren wird, ich hab es nie getestet und will es auch nicht testen.</p>
         <div class="row">
             <div class="col">

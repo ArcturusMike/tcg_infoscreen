@@ -116,12 +116,14 @@
 
     function meisterschaftsRotation() {
         const tabellen = [
+            "https://tennis-info-sigma.vercel.app/e/league/253681",
             "https://tennis-info-sigma.vercel.app/e/league/250966", 
             "https://tennis-info-sigma.vercel.app/e/league/250983", 
             "https://tennis-info-sigma.vercel.app/e/league/250989", 
             "https://tennis-info-sigma.vercel.app/e/league/251091"
         ];
         const spielplaene = [
+            "https://tennis-info-sigma.vercel.app/e/team/585381",
             "https://tennis-info-sigma.vercel.app/e/team/571937", 
             "https://tennis-info-sigma.vercel.app/e/team/572237", 
             "https://tennis-info-sigma.vercel.app/e/team/577606", 
