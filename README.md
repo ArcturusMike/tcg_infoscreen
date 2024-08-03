@@ -39,6 +39,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 ## To do:
 
 - [ ] Statt das lange Kommando "chromium-browser..." an mehreren Stellen auszuführen, eine .sh-Datei erstellen und diese dann im crontab bzw. im Dekstop-Starter ausführen
+- [ ] Nur am Wochenende alle 5 Minuten aktualisieren, sonst alle 10 Minuten
 - [ ] Vorstandsdienst konfigurierbar machen
 - [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
 - [ ] Bilder anzeigbar machen (Diashow)
