@@ -8,9 +8,9 @@
             </div>
         </div>
     </div>
-    <div class="col p-2 pe-3">            
-        <div class="container-fluid rounded-3 bg-danger d-flex align-items-center h-100 fs-1 fw-semibold text-light">
-            <marquee scrollamount="10">Vorstands-Wochendienst:&nbsp;&nbsp;<span class="fs-1 fw-semibold" id="vorstand"></span> <?php echo file_get_contents("../dateien/lauftext.txt"); ?></marquee>
+    <div class="col-8 p-2 pe-3">            
+        <div class="container-fluid rounded-3 bg-danger d-flex align-items-center h-100 fs-1 fw-semibold text-light overflow-hidden">
+            <div id="lauftext"><span>Vorstands-Wochendienst:&nbsp;&nbsp;<span class="fs-1 fw-semibold" id="vorstand"></span></span> <?php echo file_get_contents("../dateien/lauftext.txt"); ?></div>
         </div>
     </div>
 </div>

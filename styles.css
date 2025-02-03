@@ -46,6 +46,10 @@ body {
     height: 32%;
 }
 
+#lauftext {
+    white-space: nowrap;
+}
+
 #pdf-iframe {
     width: calc(100%/1);
     height: calc(100%/1);

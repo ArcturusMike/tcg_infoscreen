@@ -38,6 +38,30 @@
 ?>
 
 <script>
+    // Lauftext laufen lassen falls Text zu lang
+    function lauftextCheck() {
+        const lauftext_width = document.getElementById("lauftext").scrollWidth;
+        const parent_width = lauftext.parentElement.clientWidth;
+
+        // Check if the content is wider than its container
+        if (lauftext_width > parent_width) {
+            let dauer = lauftext_width / 50;
+
+            document.getElementById("lauftext").animate(
+                [
+                    {transform: "translateX(" + parent_width + "px)"},                              // from
+                    {transform: "translateX(" + (-1 * lauftext_width) + "px)"}      // to
+                ],
+                {
+                    duration: (dauer * 1000),
+                    iterations: Infinity
+                }
+            );
+        } else {
+            lauftext.style.animation = "none"; // No animation if text fits
+        }
+    }
+
     function uhrzeit() {
         let wochentage = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
         //let monate = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
@@ -112,6 +136,8 @@
 
 
         document.getElementById("vorstand").innerHTML = dienstname;
+
+        lauftextCheck();
     }
 
     function meisterschaftsRotation() {
@@ -209,13 +235,18 @@
         ?>
     }
 
-    // Function to reload the page if the current time is xx:05, xx:10, xx:15, xx:20, etc.
+    // Seite neu laden: Mo-Fr um xx:10, xx:20, ...; Sa-So um xx:05, xx:10, ...
     function seiteNeuladen() {
         const currentDate = new Date();
+        const day = currentDate.getDay(); // 0 = Sunday, 6 = Saturday
         const minutes = currentDate.getMinutes();
-    
-        if (minutes % 5 === 0) {
-        window.location.reload(true);
+
+        if ((day === 0 || day === 6) && minutes % 5 === 0) {
+            // Reload every 5 minutes on weekends (Saturday & Sunday)
+            window.location.reload(true);
+        } else if (day >= 1 && day <= 5 && minutes % 10 === 0) {
+            // Reload every 10 minutes from Monday to Friday
+            window.location.reload(true);
         }
     }
     // Call the function every minute
