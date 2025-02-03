@@ -37,14 +37,19 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
     - `0 8 * * * echo 'on 0.0.0.0' | /usr/bin/cec-client -s -d 1`
 
 ## To do:
+### Webpage:
 
-- [ ] Statt das lange Kommando "chromium-browser..." an mehreren Stellen auszuführen, eine .sh-Datei erstellen und diese dann im crontab bzw. im Dekstop-Starter ausführen
 - [ ] Nur am Wochenende alle 5 Minuten aktualisieren, sonst alle 10 Minuten
+- [ ] Lauftext: Marquee durch CSS-Animation ersetzen damit flüssig
 - [ ] Vorstandsdienst konfigurierbar machen
+- [ ] Meisterschaft in der Konfiguration hinzufügen (aber read-only machen sodass nur ich es bearbeiten kann, z.B. über F12 usw.)
+- [ ] Präsentationsmodus auf nur 1 Konfig-Datei umbauen
 - [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
 - [ ] Bilder anzeigbar machen (Diashow)
 - [ ] Tennis-Live-Ergebnisse einbinden (https://ls.sir.sportradar.com/tennisnet/de/tennis/atp geht vielleicht irgendwie)
-- [ ] Lauftext: Marquee durch CSS-Animation ersetzen damit flüssig
-- [ ] Meisterschaft Light Mode?
-- [ ] Präsentationsmodus auf nur 1 Konfig-Datei umbauen
-- [ ] Konfiguration erreichbar machen via Tailscale o.Ä.?
+
+
+### Raspi:
+
+- [ ] Statt das lange Kommando "chromium-browser..." an mehreren Stellen auszuführen, eine .sh-Datei erstellen und diese dann im crontab bzw. im Dekstop-Starter ausführen
+- [ ] Konfiguration erreichbar machen via Tailscale (nur für Marko?)
