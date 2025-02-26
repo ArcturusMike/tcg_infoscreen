@@ -38,6 +38,62 @@
             echo "'The file does not exist.'";
         }
     }
+
+    function vorstandsdienst() {
+        // Get the current week number
+        $currentWeek = date('W');  // Get current week number (1-52)
+        
+        // Path to the file containing the week numbers
+        $weekFile = '../dateien/vorstandsdienst_wochen.txt';
+    
+        // Check if the file exists
+        if (!file_exists($weekFile)) {
+            echo "The file 'vorstandsdienst_wochen.txt' does not exist.";
+            return;
+        }
+    
+        // Read the lines from 'vorstandsdienst_wochen.txt'
+        $weekLines = file($weekFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    
+        // Check if the current week is in the list and get its line number
+        $weekLine = null;
+        foreach ($weekLines as $index => $line) {
+            if (strpos($line, $currentWeek) !== false) {
+                // Found the current week in the line, get its line number
+                $weekLine = $index + 1;  // Line number (starting from 1)
+                break;
+            }
+        }
+    
+        // If week number is not found, echo "nicht besetzt"
+        if ($weekLine === null) {
+            echo "nicht besetzt";
+            return;
+        }
+    
+        // Path to the file that contains the names (e.g. vorstandsdienst_namen.txt)
+        $nameFile = '../dateien/vorstandsdienst_namen.txt';
+    
+        // Check if the name file exists
+        if (!file_exists($nameFile)) {
+            echo "The file '$nameFile' does not exist.";
+            return;
+        }
+    
+        // Read the lines from the name file
+        $nameLines = file($nameFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    
+        // Check if the file has enough lines for the current week's line number
+        if (isset($nameLines[$weekLine - 1])) {
+            // Get the content of the line with the corresponding week number
+            $dienstname = $nameLines[$weekLine - 1];
+            // Echo the dienstname
+            echo $dienstname;
+        } else {
+            echo "The line number for week $currentWeek does not exist in '$nameFile'.";
+        }
+    }
+    
 ?>
 
 <script>
@@ -97,50 +153,6 @@
         document.getElementById("uhrzeit").innerHTML = dateTime;
 
         setTimeout(uhrzeit, 1000);
-    }
-  
-    function vorstandsdienst() {
-        let vorstand = {
-            19: "Mayer Marko",
-            20: "Rohrmeister Gerald",
-            21: "Wernig Rene",
-            22: "Riepl Jan",
-            23: "Nachbar Patrick",
-            24: "Stefan Christopher",
-            25: "Rohrmeister Gerald",
-            26: "Mayer Marko",
-            27: "Wernig Rene",
-            28: "Riepl Jan",
-            29: "Nachbar Patrick",
-            30: "Stefan Christopher",
-            31: "Rohrmeister Gerald",
-            32: "Mayer Marko",
-            33: "Wernig Rene",
-            34: "Riepl Jan",
-            35: "Nachbar Patrick",
-            36: "Stefan Christopher",
-            37: "Mayer Marko",
-            38: "Rohrmeister Gerald",
-            39: "Wernig Rene",
-            40: "Riepl Jan",
-            41: "Nachbar Patrick",
-            42: "Stefan Christopher",
-        };
-
-        const today = new Date();
-        const januaryFirst = new Date(today.getFullYear(), 0, 1);
-        const daysUntilToday = Math.floor((today - januaryFirst) / (24 * 60 * 60 * 1000)) + 1;
-        const weekNumber = Math.ceil((daysUntilToday + januaryFirst.getDay() - 1) / 7);
-
-        let dienstname = vorstand[weekNumber];
-        if (dienstname === undefined) {
-            dienstname = "nicht besetzt";
-        }
-
-
-        document.getElementById("vorstand").innerHTML = dienstname;
-
-        lauftextCheck();
     }
 
     function meisterschaftsRotation() {

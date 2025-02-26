@@ -55,13 +55,31 @@
                     <div class="row mt-4">
                         <h2 data-bs-toggle="collapse" data-bs-target=".mannschaften-collapse">&#11208; Meisterschafts-Mannschaften</h2>
                         <div class="col text-center collapse mannschaften-collapse">
-                            <h5>Links <span class="fs-6 fw-semibold text-danger">("http://" bzw. https:// muss dabei sein!")</span></h5>
+                            <h5>Links <span class="fs-6 fw-semibold text-danger">(Die erste Hälfte der Links sind die Tabellen, die zweite Hälfte die der Mannschaftsseiten!)</span></h5>
                             <textarea class="form-control bg-secondary border border-dark rounded" name="mannschaften-links" rows="10" placeholder='URL inkl. "http"/"https"'><?php echo file_get_contents("../../dateien/mannschaften.txt"); ?></textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col collapse mannschaften-collapse">
                             <button type="submit" class="form-control btn btn-primary mt-2" disabled>Mannschaften einstellen (deaktiviert)</button>
+                        </div>
+                    </div>
+                </form>
+                <form action="vorstandsdienst.php" method="post">
+                    <div class="row mt-4">
+                        <h2 data-bs-toggle="collapse" data-bs-target=".vorstandsdienst-collapse">&#11208; Vorstandsdienst</h2>
+                        <div class="col-2 pe-0 text-center collapse vorstandsdienst-collapse">
+                            <h5>Woche</h5>
+                            <textarea class="form-control bg-secondary border border-dark rounded-0 rounded-start" name="vorstandsdienst-wochen" rows="26" placeholder="KW xx" readonly><?php echo file_get_contents("../../dateien/vorstandsdienst_wochen.txt"); ?></textarea>
+                        </div>
+                        <div class="col ps-0 text-center collapse vorstandsdienst-collapse">
+                            <h5>Name</h5>
+                            <textarea class="form-control bg-secondary border border-dark rounded-0 rounded-end" name="vorstandsdienst-namen" rows="26" placeholder='Riepl Jan&#10;Mayer Marko&#10;etc.'><?php echo file_get_contents("../../dateien/vorstandsdienst_namen.txt"); ?></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col collapse vorstandsdienst-collapse">
+                            <button type="submit" class="form-control btn btn-primary mt-2">Vorstandsdienst einstellen</button>
                         </div>
                     </div>
                 </form>

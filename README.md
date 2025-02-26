@@ -12,7 +12,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 7. Bei Chromium `Adblock` und `I don’t care about cookies` installieren
 8. `sudo apt update && sudo apt install apache2 php8.2 unclutter git`
     - In `/etc/php/8.2/apache2/php.ini` die `date.timezone = Europe/Vienna` setzen und dann `sudo service apache2 restart` machen
-9.  `sudo mkdir /var/www/html/dateien/ && cd /var/www/html/dateien/ && sudo touch artikel_dauer.txt artikel.txt pdfs_dauer.txt pdfs.txt praesentationsmodus.txt praesentationsmodus_seiten.txt lauftext.txt vorstandsdienst.txt && sudo chmod -R 777 /var/www/html/dateien/`
+9.  `sudo mkdir /var/www/html/dateien/ && cd /var/www/html/dateien/ && sudo touch artikel_dauer.txt artikel.txt pdfs_dauer.txt pdfs.txt praesentationsmodus.txt praesentationsmodus_seiten.txt lauftext.txt mannschaften.txt vorstandsdienst_wochen.txt vorstandsdienst_namen.txt && sudo chmod -R 777 /var/www/html/dateien/`
 10. Unclutter-Autostart einrichten ([Link](https://ostechnix.com/auto-hide-mouse-pointer-using-unclutter-after-a-certain-time/))
 11. ~~Automatische Sicherheitsupdates aktivieren ([Link](https://www.elektronik-kompendium.de/sites/raspberry-pi/2002101.htm))~~
 12. ~~Täglicher Reboot: (Schaltet das vll. den Bildschirm ein?)~~
@@ -39,7 +39,6 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 ## To do:
 ### Webpage:
 
-- [ ] Vorstandsdienst konfigurierbar machen
 - [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
 - [ ] Präsentationsmodus auf nur 1 Konfig-Datei umbauen
 - [ ] Tennis-Live-Ergebnisse einbinden (https://ls.sir.sportradar.com/tennisnet/de/tennis/atp/live geht vielleicht irgendwie)
@@ -47,6 +46,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 - [x] Nur am Wochenende alle 5 Minuten aktualisieren, sonst alle 10 Minuten
 - [x] Lauftext: Marquee durch CSS-Animation ersetzen damit flüssig
 - [x] Meisterschaft in der Konfiguration hinzufügen (aber read-only machen sodass nur ich es bearbeiten kann, z.B. über F12 usw.)
+- [x] Vorstandsdienst konfigurierbar machen
 
 
 ### Raspi:
