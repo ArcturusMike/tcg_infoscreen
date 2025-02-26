@@ -40,9 +40,10 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 ### Webpage:
 
 - [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
-- [ ] Präsentationsmodus auf nur 1 Konfig-Datei umbauen
 - [ ] Tennis-Live-Ergebnisse einbinden (https://ls.sir.sportradar.com/tennisnet/de/tennis/atp/live geht vielleicht irgendwie)
 - [ ] Diashow-Modus für Bilder einbauen
+- [ ] Präsentationsmodus auf nur 1 Konfig-Datei umbauen
+- [ ] Admin-Seite: HTML-Struktur (rows, cols) verbessern/verschönern
 - [x] Nur am Wochenende alle 5 Minuten aktualisieren, sonst alle 10 Minuten
 - [x] Lauftext: Marquee durch CSS-Animation ersetzen damit flüssig
 - [x] Meisterschaft in der Konfiguration hinzufügen (aber read-only machen sodass nur ich es bearbeiten kann, z.B. über F12 usw.)
