@@ -18,14 +18,14 @@
                 <form action="artikel.php" method="post">
                     <div class="row">
                         <h2>Homepage-Artikel</h2>
-                            <div class="col-2 pe-0 text-center">
-                                <h5>Dauer</h5>
-                                <textarea class="form-control bg-secondary border border-dark rounded-0 rounded-start" name="artikel-dauer" rows="10" placeholder="Sekunden"><?php echo file_get_contents("../../dateien/artikel_dauer.txt"); ?></textarea>
-                            </div>
-                            <div class="col ps-0 text-center">
-                                <h5>Links <span class="fs-6 fw-semibold text-danger">("http://" bzw. https:// muss dabei sein!")</span></h5>
-                                <textarea class="form-control bg-secondary border border-dark rounded-0 rounded-end" name="artikel-links" rows="10" placeholder='URL inkl. "http"/"https"'><?php echo file_get_contents("../../dateien/artikel.txt"); ?></textarea>
-                            </div>
+                        <div class="col-2 pe-0 text-center">
+                            <h5>Dauer</h5>
+                            <textarea class="form-control bg-secondary border border-dark rounded-0 rounded-start" name="artikel-dauer" rows="10" placeholder="Sekunden"><?php echo file_get_contents("../../dateien/artikel_dauer.txt"); ?></textarea>
+                        </div>
+                        <div class="col ps-0 text-center">
+                            <h5>Links <span class="fs-6 fw-semibold text-danger">("http://" bzw. https:// muss dabei sein!")</span></h5>
+                            <textarea class="form-control bg-secondary border border-dark rounded-0 rounded-end" name="artikel-links" rows="10" placeholder='URL inkl. "http"/"https"'><?php echo file_get_contents("../../dateien/artikel.txt"); ?></textarea>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col">
@@ -51,6 +51,20 @@
                         </form>
                     </div>
                 </div>
+                <form action="mannschaften.php" method="post">
+                    <div class="row mt-4">
+                        <h2 data-bs-toggle="collapse" data-bs-target=".mannschaften-collapse">&#11208; Meisterschafts-Mannschaften</h2>
+                        <div class="col text-center collapse mannschaften-collapse">
+                            <h5>Links <span class="fs-6 fw-semibold text-danger">("http://" bzw. https:// muss dabei sein!")</span></h5>
+                            <textarea class="form-control bg-secondary border border-dark rounded" name="mannschaften-links" rows="10" placeholder='URL inkl. "http"/"https"'><?php echo file_get_contents("../../dateien/mannschaften.txt"); ?></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col collapse mannschaften-collapse">
+                            <button type="submit" class="form-control btn btn-primary mt-2" disabled>Mannschaften einstellen (deaktiviert)</button>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="col">
                 <h2>Ausschreibungen / PDFs</h2>

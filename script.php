@@ -1,35 +1,38 @@
 <?php
-    function processFile($filePath) {
+    function processFile($filePath, $mode = 0) {
         // Check if the file exists
         if (file_exists($filePath)) {
-            // Open the file for reading
-            $file = fopen($filePath, "r");
-            $lines = array();
+            // Read all lines into an array
+            $lines = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     
-            // Read the file line by line
-            while (!feof($file)) {
-                // Read the next line
-                $line = fgets($file);
-                // Trim whitespace from the beginning and end of the line
+            // Count total lines
+            $totalLines = count($lines);
+            $halfIndex = ceil($totalLines / 2); // Determine halfway point
+    
+            // Determine which lines to process based on $mode
+            if ($mode == 1) {
+                $lines = array_slice($lines, 0, $halfIndex); // First half
+            } elseif ($mode == 2) {
+                $lines = array_slice($lines, $halfIndex); // Second half
+            }
+    
+            $processedLines = array();
+    
+            // Process each line
+            foreach ($lines as $line) {
                 $line = trim($line);
-                // Check if the line is empty
+    
                 if (!empty($line)) {
-                    // Check if the line is an integer
                     if (ctype_digit($line)) {
-                        // Convert the line to integer and add it to the array
-                        $lines[] = ((int)$line * 1000);
+                        $processedLines[] = ((int)$line * 1000);
                     } else {
-                        // If not an integer, add the line enclosed in double quotes
-                        $lines[] = '"' . $line . '"';
+                        $processedLines[] = '"' . $line . '"';
                     }
                 }
             }
     
-            // Close the file
-            fclose($file);
-    
-            // Echo the lines as a comma-separated string
-            echo implode(', ', $lines);
+            // Echo the processed lines as a comma-separated string
+            echo implode(', ', $processedLines);
         } else {
             // If the file doesn't exist, echo an error message
             echo "'The file does not exist.'";
@@ -142,18 +145,10 @@
 
     function meisterschaftsRotation() {
         const tabellen = [
-            "https://tennis-info-sigma.vercel.app/e/league/253681",
-            "https://tennis-info-sigma.vercel.app/e/league/250966", 
-            "https://tennis-info-sigma.vercel.app/e/league/250983", 
-            "https://tennis-info-sigma.vercel.app/e/league/250989", 
-            "https://tennis-info-sigma.vercel.app/e/league/251091"
+            <?php processFile('../dateien/mannschaften.txt', 1); ?>
         ];
         const spielplaene = [
-            "https://tennis-info-sigma.vercel.app/e/team/585381",
-            "https://tennis-info-sigma.vercel.app/e/team/571937", 
-            "https://tennis-info-sigma.vercel.app/e/team/572237", 
-            "https://tennis-info-sigma.vercel.app/e/team/577606", 
-            "https://tennis-info-sigma.vercel.app/e/team/577605"
+            <?php processFile('../dateien/mannschaften.txt', 2); ?>
         ];
 
         let index = 0;
