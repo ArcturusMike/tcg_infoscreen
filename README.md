@@ -16,8 +16,8 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 10. Unclutter-Autostart einrichten ([Link](https://ostechnix.com/auto-hide-mouse-pointer-using-unclutter-after-a-certain-time/))
 11. ~~Automatische Sicherheitsupdates aktivieren ([Link](https://www.elektronik-kompendium.de/sites/raspberry-pi/2002101.htm))~~
 12. ~~Täglicher Reboot: (Schaltet das vll. den Bildschirm ein?)~~
-    - `sudo crontab -e` und dort hinzufügen:
-    - `45 7 * * * /sbin/shutdown -r now`
+    - ~~`sudo crontab -e` und dort hinzufügen:~~
+    - ~~`45 7 * * * /sbin/shutdown -r now`~~
 13. 2 Mal am Tag Chromium neu starten:
     - `crontab -e` und dort hinzufügen:
     - `0 7,16 * * * pkill -9 chromium && DISPLAY=:0 chromium-browser --hide-crash-restore-bubble --start-fullscreen http://localhost/tcg_infoscreen/`
@@ -28,8 +28,8 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 16. Damit es einen Ordner zum Löschen später gibt, das Repository manuell clonen:
     - `sudo git clone https://github.com/ArcturusMike/tcg_infoscreen.git /var/www/html/tcg_infoscreen/`
 17. ~~Git Autoclone alle 10 Minuten einer Stunde, nur wenn Internetverbindung besteht:~~
-    - `sudo crontab -e` und dort:
-    - `9,19,29,39,49,59 6-21 * * * ping -c 1 www.orf.at && rm -r /var/www/html/tcg_infoscreen/ && git clone https://github.com/ArcturusMike/tcg_infoscreen.git /var/www/html/tcg_infoscreen/ && service apache2 restart`
+    - ~~`sudo crontab -e` und dort:~~
+    - ~~`9,19,29,39,49,59 6-21 * * * ping -c 1 www.orf.at && rm -r /var/www/html/tcg_infoscreen/ && git clone https://github.com/ArcturusMike/tcg_infoscreen.git /var/www/html/tcg_infoscreen/ && service apache2 restart`~~
 18. 4K beim Raspberry in der Raspi-Config aktivieren
 19.  Via Screen Configuration: Auflösung 3840x2160 und dann das Bild drehen
 20. Bildschirm dunkel 22-06 Uhr via HDMI-CEC [einstellen](https://pimylifeup.com/raspberrypi-hdmi-cec/) und folgende crontabs einrichten:
