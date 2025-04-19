@@ -39,6 +39,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 ## To do:
 ### Webpage:
 
+- [ ] Statt immer automatisch neu zu laden alle 5-10 min, prüfen, ob sich der Inhalt einer der Konfigurationsdateien verändert hat. Wenn ja dann neu laden, wenn nein dann nicht.
 - [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
 - [ ] Tennis-Live-Ergebnisse einbinden (https://ls.sir.sportradar.com/tennisnet/de/tennis/atp/live geht vielleicht irgendwie)
 - [ ] Diashow-Modus für Bilder einbauen
