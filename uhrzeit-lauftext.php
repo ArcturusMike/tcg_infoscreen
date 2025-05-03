@@ -1,5 +1,5 @@
 <?php
-$vorstand = 'Vorstands-Wochendienst:&nbsp;<span class="fs-1 fw-semibold" id="vorstand">' . vorstandsdienst() . '</span>&nbsp;';
+$vorstand = ' Vorstands-Wochendienst:&nbsp;<span class="fs-1 fw-semibold" id="vorstand">' . vorstandsdienst() . '</span>&nbsp;';
 $lauftext = file_get_contents("../dateien/lauftext.txt");
 
 if ($lauftext == "") {
