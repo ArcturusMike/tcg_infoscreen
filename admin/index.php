@@ -122,7 +122,7 @@
                 </div>
                 <div class="row mt-4">
                     <h2 data-bs-toggle="collapse" data-bs-target=".lauftext-collapse">&#11208; Lauftext</h2>
-                    <p class="text-danger fw-semibold collapse lauftext-collapse">Wichtig: Keine Zeilenumbrüche.</p>
+                    <p class="text-danger fw-semibold collapse lauftext-collapse">Wichtig: Keine Zeilenumbrüche und mit '+++' anfangen und enden.</p>
                     <div class="col collapse lauftext-collapse">
                         <form action="lauftext.php" method="post">
                         <div class="form-group">

@@ -48,8 +48,7 @@
     
         // Check if the file exists
         if (!file_exists($weekFile)) {
-            echo "The file 'vorstandsdienst_wochen.txt' does not exist.";
-            return;
+            return "Datei '$weekFile' existiert nicht.";
         }
     
         // Read the lines from 'vorstandsdienst_wochen.txt'
@@ -67,8 +66,7 @@
     
         // If week number is not found, echo "nicht besetzt"
         if ($weekLine === null) {
-            echo "nicht besetzt";
-            return;
+            return "nicht besetzt";
         }
     
         // Path to the file that contains the names (e.g. vorstandsdienst_namen.txt)
@@ -76,8 +74,7 @@
     
         // Check if the name file exists
         if (!file_exists($nameFile)) {
-            echo "The file '$nameFile' does not exist.";
-            return;
+            return "Datei '$nameFile' existiert nicht.";
         }
     
         // Read the lines from the name file
@@ -88,9 +85,9 @@
             // Get the content of the line with the corresponding week number
             $dienstname = $nameLines[$weekLine - 1];
             // Echo the dienstname
-            echo $dienstname;
+            return $dienstname;
         } else {
-            echo "The line number for week $currentWeek does not exist in '$nameFile'.";
+            return "Kein Eintrag für Woche $currentWeek in '$nameFile'.";
         }
     }
     
