@@ -39,9 +39,8 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 ## To do:
 ### Webpage:
 
-- [ ] Lauftext "unendlich" machen per Javascript/PHP?
 - [ ] Statt immer automatisch neu zu laden, mittels filemtime() alle 2 min prüfen ob sich eine Datei verändert hat und dann ggf mit AJAX Inhalt ersetzen.
-- [ ] Eingebundene Webseiten (Meisterschaft auf alle Fälle, Homepage evtl.) so umbauen, dass sie beim Seiten-Neuladen alle geladen werden und dann - anstatt sie immer wieder neu als src zu setzen - einfach mit display: "block/none" austauschen 
+- [ ] Eingebundene Webseiten (Meisterschaft auf alle Fälle, Homepage evtl.) so umbauen, dass sie beim Seiten-Neuladen alle geladen werden und dann einfach mit display: "block/none" austauschen, anstatt sie immer wieder neu als src zu setzen
 - [ ] uhrzeit() nicht in body-onload sondern dort wo die Uhrzeit angezeigt wird, analog zu vorstandsdienst()?
 - [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
 - [ ] Tennis-Live-Ergebnisse einbinden (https://ls.sir.sportradar.com/tennisnet/de/tennis/atp/live geht vielleicht irgendwie)
@@ -52,6 +51,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 - [x] Lauftext: Marquee durch CSS-Animation ersetzen damit flüssig (Fazit: es ruckelt noch mehr, daher wieder rückgängig gemacht!)
 - [x] Meisterschaft in der Konfiguration hinzufügen (aber read-only machen sodass nur ich es bearbeiten kann, z.B. über F12 usw.)
 - [x] Vorstandsdienst konfigurierbar machen
+- [x] Lauftext "unendlich" machen per Javascript/PHP?
 
 
 ### Raspi:
