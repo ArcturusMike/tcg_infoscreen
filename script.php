@@ -196,7 +196,7 @@
 
         function rotatePages() {
             currentPage = (currentPage % totalPages) + 1;
-            document.getElementById("praesentations-container").innerHTML = '<iframe id="iframe-praesentation" class="w-100 h-100 rounded-3" src="../dateien/' + <?php echo '"' . file_get_contents("../dateien/praesentationsmodus.txt") . '"' ?> + '#toolbar=0&scrollbar=0&view=Fit&page=' + currentPage + '" scrolling="no"></iframe>';
+            document.getElementById("praesentations-container").innerHTML = '<iframe id="praesentation-iframe" class="w-100 h-100 rounded-3" src="../dateien/' + <?php echo '"' . file_get_contents("../dateien/praesentationsmodus.txt") . '"' ?> + '#toolbar=0&scrollbar=0&view=Fit&page=' + currentPage + '" scrolling="no"></iframe>';
         }
 
         if (totalPages > 1) {
@@ -215,6 +215,7 @@
         ?>
     }
 
+    /*
     // Seite neu laden: Mo-Fr um xx:10, xx:20, ...; Sa-So um xx:05, xx:10, ...
     function seiteNeuladen() {
         const currentDate = new Date();
@@ -231,4 +232,41 @@
     }
     // Call the function every minute
     setInterval(seiteNeuladen, 60000);
+    */
+
+   // Seite neu laden, wenn es eine jüngere mtime als die gespeicherte gibt oder sonst alle 3 Stunden.
+   let lastKnownTime = 0;
+    function seiteNeuLaden() {
+        fetch('config-mtime-check.php?ts=' + Date.now())
+            .then(res => res.text())
+            .then(mtime => {
+                const serverTime = parseInt(mtime, 10);
+                if (!lastKnownTime) {
+                    lastKnownTime = serverTime;  // First run
+                } else if (serverTime > lastKnownTime) {
+                    location.reload();  // Reload if file changed
+                }
+            })
+            .catch(err => console.error('Mtime-Check failed:', err));
+
+            // wenn festgelegte Zeit
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+
+            const reloadTimes = [
+                { h: 8, m: 30 },
+                { h: 12, m: 30 },
+                { h: 16, m: 30 },
+                { h: 18, m: 30 }
+            ];
+
+            for (const t of reloadTimes) {
+                if (hours === t.h && minutes === t.m) {
+                    location.reload();
+                    break;
+                }
+            }
+    }
+    setInterval(seiteNeuLaden, 60000); // Check every 60 seconds
 </script>
