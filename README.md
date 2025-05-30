@@ -39,8 +39,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 ## To do:
 ### Webpage:
 
-- [ ] Eingebundene Webseiten (Meisterschaft auf alle Fälle, Homepage evtl.) so umbauen, dass sie beim Seiten-Neuladen alle nacheinander geladen werden (Lazy Loading) und dann einfach mit display: "block/none" austauschen, anstatt sie immer wieder neu als src zu setzen
-- [ ] Infoscreen generell alle 2h oder so ganz neu laden wegen iFrame-Websiteänderungen o.Ä.
+- [ ] Iframes (Meisterschaft, Homepage, PDFs) so umbauen, dass sie beim Seiten-Neuladen alle nacheinander geladen werden (Lazy Loading) und dann einfach mit display: "block/none" austauschen, anstatt sie immer wieder neu als src zu setzen
 - [ ] uhrzeit() nicht in body-onload sondern dort wo die Uhrzeit angezeigt wird, analog zu vorstandsdienst()?
 - [ ] UV-Index einbinden?
 - [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
@@ -48,7 +47,6 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 - [ ] Diashow-Modus für Bilder einbauen
 - [ ] Präsentationsmodus auf nur 1 Konfig-Datei umbauen
 - [ ] Admin-Seite: HTML-Code-Struktur (rows, cols) verbessern/verschönern
-- [x] Nur am Wochenende alle 5 Minuten aktualisieren, sonst alle 10 Minuten
 - [x] Lauftext: Marquee durch CSS-Animation ersetzen damit flüssig (Fazit: es ruckelt noch mehr, daher wieder rückgängig gemacht!)
 - [x] Meisterschaft in der Konfiguration hinzufügen (aber read-only machen sodass nur ich es bearbeiten kann, z.B. über F12 usw.)
 - [x] Vorstandsdienst konfigurierbar machen
