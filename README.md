@@ -39,7 +39,6 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 ## To do:
 ### Webpage:
 
-- [ ] Iframes (Meisterschaft, Homepage, PDFs) so umbauen, dass sie beim Seiten-Neuladen alle nacheinander geladen werden (Lazy Loading) und dann einfach mit display: "block/none" austauschen, anstatt sie immer wieder neu als src zu setzen
 - [ ] uhrzeit() nicht in body-onload sondern dort wo die Uhrzeit angezeigt wird, analog zu vorstandsdienst()?
 - [ ] UV-Index einbinden?
 - [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
@@ -52,6 +51,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 - [x] Vorstandsdienst konfigurierbar machen
 - [x] Lauftext "unendlich" machen per Javascript/PHP?
 - [x] Statt immer automatisch neu zu laden, mittels filemtime() alle 2 min prüfen ob sich eine Datei verändert hat und dann Infoscreen neu laden (nix AJAX notwendig)
+- [x] Iframes (Meisterschaft, PDFs; Homepage nicht!) so umbauen, dass sie beim Seiten-Neuladen alle nacheinander geladen werden (Lazy Loading) und dann einfach mit display: "block/none" austauschen, anstatt sie immer wieder neu als src zu setzen
 
 
 ### Raspi:

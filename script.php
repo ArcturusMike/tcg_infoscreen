@@ -138,11 +138,55 @@
 
         let index = 0;
 
+        // Lazy loading: Die iframe-Webseiten werden nacheinander alle geladen, aber gespeichert, damit sie nicht immer neu abgerufen werden müssen. Spart CPU.
+        const tabelleWrapper = document.getElementById('tabelle-wrapper');
+        const spielplanWrapper = document.getElementById('spielplan-wrapper');
+
+        const tabelleIframes = new Array(tabellen.length).fill(null);
+        const spielplanIframes = new Array(spielplaene.length).fill(null);
+
         function ChangeTeamSources() {
-            document.getElementById('tabelle-iframe').src = tabellen[index];
-            document.getElementById('spielplan-iframe').src = spielplaene[index];
-            document.getElementById("mannschaftsnummer").innerHTML = "(" + (index + 1) + "/" + tabellen.length + ")";
-            index = (index + 1) % tabellen.length; // Wrap around the index
+            // Hide all existing iframes
+            tabelleIframes.forEach((iframe) => {
+                if (iframe) iframe.style.display = 'none';
+            });
+            spielplanIframes.forEach((iframe) => {
+                if (iframe) iframe.style.display = 'none';
+            });
+
+            // Load and display tabelle iframe
+            if (!tabelleIframes[index]) {
+                const tabI = document.createElement('iframe');
+                tabI.className = 'tabelle-iframe rounded-bottom-3';
+                tabI.setAttribute('scrolling', 'no');
+                tabI.dataset.src = tabellen[index];
+                tabI.src = tabellen[index];
+                tabI.style.display = 'block';
+                tabelleWrapper.appendChild(tabI);
+                tabelleIframes[index] = tabI;
+            } else {
+                tabelleIframes[index].style.display = 'block';
+            }
+
+            // Load and display spielplan iframe
+            if (!spielplanIframes[index]) {
+                const spI = document.createElement('iframe');
+                spI.className = 'spielplan-iframe rounded-bottom-3';
+                spI.setAttribute('scrolling', 'no');
+                spI.dataset.src = spielplaene[index];
+                spI.src = spielplaene[index];
+                spI.style.display = 'block';
+                spielplanWrapper.appendChild(spI);
+                spielplanIframes[index] = spI;
+            } else {
+                spielplanIframes[index].style.display = 'block';
+            }
+
+            // Update team index display
+            document.getElementById("mannschaftsnummer").innerHTML = `(${index + 1}/${tabellen.length})`;
+
+            // Move to next index
+            index = (index + 1) % tabellen.length;
         }
 
         ChangeTeamSources();
@@ -166,24 +210,84 @@
             }, delay);
         }
 
+        // Lazy loading funktioniert leider so, dass das #primary beim zweiten mal Laden nicht mehr funktioniert.
+        /*
+        const homepageWrapper = document.getElementById('homepage-wrapper');
+        const cachedHomepages = new Array(artikel.length).fill(null);
+
+        let index = 0;
+
+        function changeHomepageSources() {
+            // Hide all existing iframes
+            cachedHomepages.forEach((iframe) => {
+                if (iframe) iframe.style.display = 'none';
+            });
+
+            // Lazy-load iframe if not already created
+            if (!cachedHomepages[index]) {
+                const iframe = document.createElement('iframe');
+                iframe.className = 'homepage-iframe rounded-bottom-3';
+                iframe.setAttribute('scrolling', 'no');
+                iframe.dataset.src = artikel[index] + "#primary";
+                iframe.src = iframe.dataset.src;
+                iframe.style.display = 'block';
+                homepageWrapper.appendChild(iframe);
+                cachedHomepages[index] = iframe;
+            } else {
+                cachedHomepages[index].style.display = 'block';
+            }
+
+            // Update current index display
+            document.getElementById("artikelnummer").innerHTML = `(${index + 1}/${artikel.length})`;
+
+            // Schedule next switch
+            const delay = dauer[index];
+            index = (index + 1) % artikel.length;
+            setTimeout(changeHomepageSources, delay);
+        }
+        */
+
         changeHomepageSources();
     }
 
     function pdfRotation() {
+        // Lazy loading wurde eingebaut, siehe meisterschaftsRotation().
         const pdfs = [<?php processFile('../dateien/pdfs.txt'); ?>];
         const dauer = [<?php processFile('../dateien/pdfs_dauer.txt'); ?>]; // in milliseconds
 
+        const pdfWrapper = document.getElementById('pdf-wrapper');
+        const cachedPDFs = new Array(pdfs.length).fill(null);
+
         let index = 0;
-        let delay = 0;
 
         function changePDFSources() {
-            setTimeout(() => {
-                delay = dauer[index];
-                document.getElementById('pdf-iframe').src = "../dateien/" + pdfs[index] + "#toolbar=0&scrollbar=0&view=Fit";
-                document.getElementById("pdfnummer").innerHTML = "(" + (index + 1) + "/" + pdfs.length + ")";
-                index = (index + 1) % pdfs.length; // Increment index, looping back to 0 if necessary
-                changePDFSources();
-            }, delay);
+            // Hide all cached iframes
+            cachedPDFs.forEach((iframe) => {
+                if (iframe) iframe.style.display = 'none';
+            });
+
+            // If not yet loaded, create and cache iframe
+            if (!cachedPDFs[index]) {
+                const iframe = document.createElement('iframe');
+                iframe.className = 'pdf-iframe rounded-bottom-3';
+                iframe.setAttribute('scrolling', 'no');
+                iframe.dataset.src = "../dateien/" + pdfs[index] + "#toolbar=0&scrollbar=0&view=Fit";
+                iframe.src = iframe.dataset.src;
+                iframe.style.display = 'block';
+                pdfWrapper.appendChild(iframe);
+                cachedPDFs[index] = iframe;
+            } else {
+                // Show the already loaded iframe
+                cachedPDFs[index].style.display = 'block';
+            }
+
+            // Update visible page number
+            document.getElementById("pdfnummer").innerHTML = `(${index + 1}/${pdfs.length})`;
+
+            // Schedule the next switch
+            const delay = dauer[index];
+            index = (index + 1) % pdfs.length;
+            setTimeout(changePDFSources, delay);
         }
 
         changePDFSources();
@@ -214,25 +318,6 @@
             }
         ?>
     }
-
-    /*
-    // Seite neu laden: Mo-Fr um xx:10, xx:20, ...; Sa-So um xx:05, xx:10, ...
-    function seiteNeuladen() {
-        const currentDate = new Date();
-        const day = currentDate.getDay(); // 0 = Sunday, 6 = Saturday
-        const minutes = currentDate.getMinutes();
-
-        if ((day === 0 || day === 6) && minutes % 5 === 0) {
-            // Reload every 5 minutes on weekends (Saturday & Sunday)
-            window.location.reload(true);
-        } else if (day >= 1 && day <= 5 && minutes % 10 === 0) {
-            // Reload every 10 minutes from Monday to Friday
-            window.location.reload(true);
-        }
-    }
-    // Call the function every minute
-    setInterval(seiteNeuladen, 60000);
-    */
 
    // Seite neu laden, wenn es eine jüngere mtime als die gespeicherte gibt oder sonst alle 3 Stunden.
    let lastKnownTime = 0;
