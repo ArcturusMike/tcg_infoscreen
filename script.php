@@ -340,7 +340,7 @@
             const minutes = now.getMinutes();
 
             const reloadTimes = [
-                { h: 8, m: 30 },
+                { h: 8, m: 50 },
                 { h: 12, m: 30 },
                 { h: 16, m: 30 },
                 { h: 18, m: 30 }
