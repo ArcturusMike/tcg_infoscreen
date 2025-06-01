@@ -319,8 +319,8 @@
         ?>
     }
 
-   // Seite neu laden, wenn es eine jüngere mtime als die gespeicherte gibt oder sonst alle 3 Stunden.
-   let lastKnownTime = 0;
+    // Seite neu laden, wenn es eine jüngere mtime als die gespeicherte gibt oder sonst alle 3 Stunden.
+    let lastKnownTime = 0;
     function seiteNeuLaden() {
         fetch('config-mtime-check.php?ts=' + Date.now())
             .then(res => res.text())
