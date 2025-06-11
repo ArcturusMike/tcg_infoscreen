@@ -20,7 +20,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
     - ~~`45 7 * * * /sbin/shutdown -r now`~~
 13. 2 Mal am Tag Chromium neu starten:
     - `crontab -e` und dort hinzufügen:
-    - `0 7,16 * * * pkill -9 chromium && DISPLAY=:0 chromium-browser --hide-crash-restore-bubble --start-fullscreen http://localhost/tcg_infoscreen/`
+    - `10 8-21/2 * * * pkill -9 chromium && DISPLAY=:0 chromium-browser --hide-crash-restore-bubble --start-fullscreen http://localhost/tcg_infoscreen/`
 14. Manuelles Start-Skript für Infoscreen [erstellen](https://askubuntu.com/questions/475081/how-to-create-a-launcher-to-execute-a-terminal-command)
 15. Browser Autostart:
     - `crontab -e` und dort:
