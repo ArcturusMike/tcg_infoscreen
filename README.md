@@ -40,6 +40,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 ### Webpage:
 
 - [ ] Temperaturanzeige und Spielübersicht alle 30 min neu laden
+- [ ] Wetterradar mal anschauen, ich vermute das führt zum Aufhängen
 - [ ] uhrzeit() nicht in body-onload sondern dort wo die Uhrzeit angezeigt wird, analog zu vorstandsdienst()?
 - [ ] UV-Index einbinden?
 - [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
