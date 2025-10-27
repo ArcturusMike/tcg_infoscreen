@@ -39,6 +39,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 ## To do:
 ### Webpage:
 
+- [ ] Geburtstage im Lauftext anzeigen (ohne Alter)
 - [ ] Temperaturanzeige und Spielübersicht alle 30 min neu laden
 - [ ] Wetterradar mal anschauen, ich vermute das führt zum Aufhängen
 - [ ] uhrzeit() nicht in body-onload sondern dort wo die Uhrzeit angezeigt wird, analog zu vorstandsdienst()?
