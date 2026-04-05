@@ -91,12 +91,11 @@
         }
     }
 
-    function geburtstage($filePath) {
+    function geburtstage() {
         $filePath = "../dateien/geburtstage.csv";
 
         if (!file_exists($filePath)) {
-            echo "Geburtstage-Datei nicht gefunden.";
-            return;
+            return "Geburtstage-Datei nicht gefunden.";
         }
 
         $today = date('n-j'); // month-day WITHOUT leading zeros (e.g. 4-5)
@@ -118,7 +117,7 @@
 
         if (count($names) > 0) {
             sort($names, SORT_NATURAL | SORT_FLAG_CASE); // alphabetical, case-insensitive
-            echo "Geburtstagsgratulationen an " . implode(" & ", $names) . "! +++";
+            return "Geburtstagsgratulationen an " . implode(" & ", $names) . "! +++";
         }
     }
     
