@@ -1,12 +1,13 @@
 <?php
 $vorstand = ' Vorstands-Wochendienst:&nbsp;<span class="fs-1 fw-semibold" id="vorstand">' . vorstandsdienst() . '</span>&nbsp;';
+$geburtstage = geburtstage();
 $lauftext = file_get_contents("../dateien/lauftext.txt");
 
 if ($lauftext == "") {
     $lauftext = "+++ ";
 }
 
-$ganzer_lauftext = $vorstand . $lauftext;
+$ganzer_lauftext = $vorstand . $lauftext . $geburtstage;
 
 $ganzer_lauftext_mehrmals = str_repeat($ganzer_lauftext, 10);
 ?>

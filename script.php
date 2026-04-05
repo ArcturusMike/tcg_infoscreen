@@ -90,6 +90,37 @@
             return "Kein Eintrag für Woche $currentWeek in '$nameFile'.";
         }
     }
+
+    function geburtstage($filePath) {
+        $filePath = "../dateien/geburtstage.csv";
+
+        if (!file_exists($filePath)) {
+            echo "Geburtstage-Datei nicht gefunden.";
+            return;
+        }
+
+        $today = date('n-j'); // month-day WITHOUT leading zeros (e.g. 4-5)
+        $names = [];
+
+        if (($handle = fopen($filePath, "r")) !== false) {
+            while (($line = fgetcsv($handle, 1000, ";")) !== false) {
+                if (count($line) >= 2) {
+                    $date = trim($line[0]);
+                    $name = trim($line[1]);
+
+                    if ($date === $today) {
+                        $names[] = $name;
+                    }
+                }
+            }
+            fclose($handle);
+        }
+
+        if (count($names) > 0) {
+            sort($names, SORT_NATURAL | SORT_FLAG_CASE); // alphabetical, case-insensitive
+            echo "Geburtstagsgratulationen an " . implode(" & ", $names) . "! +++";
+        }
+    }
     
 ?>
 
