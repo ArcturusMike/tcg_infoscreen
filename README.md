@@ -39,7 +39,6 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 ## To do:
 ### Webpage:
 
-- [ ] Geburtstage im Lauftext anzeigen (ohne Alter)
 - [ ] Temperaturanzeige und Spielübersicht alle 30 min neu laden
 - [ ] Wetterradar mal anschauen, ich vermute das führt zum Aufhängen
 - [ ] uhrzeit() nicht in body-onload sondern dort wo die Uhrzeit angezeigt wird, analog zu vorstandsdienst()?
@@ -55,6 +54,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 - [x] Lauftext "unendlich" machen per Javascript/PHP?
 - [x] Statt immer automatisch neu zu laden, mittels filemtime() alle 2 min prüfen ob sich eine Datei verändert hat und dann Infoscreen neu laden (nix AJAX notwendig)
 - [x] Iframes (Meisterschaft, PDFs; Homepage nicht!) so umbauen, dass sie beim Seiten-Neuladen alle nacheinander geladen werden (Lazy Loading) und dann einfach mit display: "block/none" austauschen, anstatt sie immer wieder neu als src zu setzen
+- [x] Geburtstage im Lauftext anzeigen (ohne Alter)
 
 
 ### Raspi:
