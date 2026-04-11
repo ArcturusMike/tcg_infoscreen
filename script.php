@@ -95,7 +95,7 @@
         $filePath = "../dateien/geburtstage.csv";
 
         if (!file_exists($filePath)) {
-            return "Geburtstage-Datei nicht gefunden.";
+            return "";
         }
 
         $today = date('n-j'); // month-day WITHOUT leading zeros (e.g. 4-5)
@@ -117,7 +117,7 @@
 
         if (count($names) > 0) {
             sort($names, SORT_NATURAL | SORT_FLAG_CASE); // alphabetical, case-insensitive
-            return "Geburtstagsgratulationen an " . implode(" & ", $names) . "! +++";
+            return " Geburtstagsgratulationen an " . implode(" & ", $names) . "! +++";
         }
     }
     
