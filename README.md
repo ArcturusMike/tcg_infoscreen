@@ -39,22 +39,18 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 ## To do:
 ### Webpage:
 
+- [ ] Durchchecken, warum sich der Infoscreen (nicht der Pi selbst!) aufhängt
+    - [ ] Wetterradar vielleicht schuld?
+    - [ ] Overclocking probieren?
 - [ ] Temperaturanzeige und Spielübersicht alle 30 min neu laden
-- [ ] Wetterradar mal anschauen, ich vermute das führt zum Aufhängen
 - [ ] uhrzeit() nicht in body-onload sondern dort wo die Uhrzeit angezeigt wird, analog zu vorstandsdienst()?
-- [ ] UV-Index einbinden?
 - [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
-- [ ] Tennis-Live-Ergebnisse einbinden (https://ls.sir.sportradar.com/tennisnet/de/tennis/atp/live geht vielleicht irgendwie)
-- [ ] Diashow-Modus für Bilder einbauen
 - [ ] Präsentationsmodus auf nur 1 Konfig-Datei umbauen
+- [ ] UV-Index einbinden?
+- [ ] Diashow-Modus für Bilder einbauen
 - [ ] Admin-Seite: HTML-Code-Struktur (rows, cols) verbessern/verschönern
+- [ ] Tennis-Live-Ergebnisse einbinden (https://ls.sir.sportradar.com/tennisnet/de/tennis/atp/live geht vielleicht irgendwie)
 - [x] Lauftext: Marquee durch CSS-Animation ersetzen damit flüssig (Fazit: es ruckelt noch mehr, daher wieder rückgängig gemacht!)
-- [x] Meisterschaft in der Konfiguration hinzufügen (aber read-only machen sodass nur ich es bearbeiten kann, z.B. über F12 usw.)
-- [x] Vorstandsdienst konfigurierbar machen
-- [x] Lauftext "unendlich" machen per Javascript/PHP?
-- [x] Statt immer automatisch neu zu laden, mittels filemtime() alle 2 min prüfen ob sich eine Datei verändert hat und dann Infoscreen neu laden (nix AJAX notwendig)
-- [x] Iframes (Meisterschaft, PDFs; Homepage nicht!) so umbauen, dass sie beim Seiten-Neuladen alle nacheinander geladen werden (Lazy Loading) und dann einfach mit display: "block/none" austauschen, anstatt sie immer wieder neu als src zu setzen
-- [x] Geburtstage im Lauftext anzeigen (ohne Alter)
 
 
 ### Raspi:
@@ -62,3 +58,4 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 - [ ] Statt das lange Kommando "chromium-browser..." an mehreren Stellen auszuführen, eine .sh-Datei erstellen und diese dann im crontab bzw. im Dekstop-Starter ausführen
 - [ ] Konfiguration erreichbar machen via Tailscale (nur für Marko?)
 - [ ] Webseite zwischen 22-08 Uhr geschlossen haben? (Oder ist das eh schon so?)
+- [ ] Automatische Platzbewässerung in der Nacht dazu machen?
