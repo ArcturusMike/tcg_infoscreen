@@ -55,6 +55,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 
 ### Raspi:
 
+- [ ] "Default Keyring"-Abfrage unterbinden
 - [ ] Statt das lange Kommando "chromium-browser..." an mehreren Stellen auszuführen, eine .sh-Datei erstellen und diese dann im crontab bzw. im Dekstop-Starter ausführen
 - [ ] Konfiguration erreichbar machen via Tailscale (nur für Marko?)
 - [ ] Webseite zwischen 22-08 Uhr geschlossen haben? (Oder ist das eh schon so?)
