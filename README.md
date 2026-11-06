@@ -43,6 +43,7 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
     - [ ] Wetterradar vielleicht schuld?
     - [ ] Overclocking probieren?
 - [ ] Temperaturanzeige und Spielübersicht alle 30 min neu laden
+- [ ] Meisterschaft mit Pyramide ab Mitte August ersetzen
 - [ ] uhrzeit() nicht in body-onload sondern dort wo die Uhrzeit angezeigt wird, analog zu vorstandsdienst()?
 - [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
 - [ ] Präsentationsmodus auf nur 1 Konfig-Datei umbauen
