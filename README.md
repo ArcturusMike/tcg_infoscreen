@@ -39,14 +39,15 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 ## To do:
 ### Webpage:
 
+- [ ] Alle Konfugurationsdateien auf 1 Datei umbauen (hat Codex schon erledigt --> prüfen und verwenden!)
 - [ ] Durchchecken, warum sich der Infoscreen (nicht der Pi selbst!) aufhängt
-    - [ ] Wetterradar vielleicht schuld?
+    - [ ] GPU-Arbeitsspeicher könnte bei 4K überfordert sein
+    - [ ] Wetterradar vielleicht schuld? (funktioniert bei 1080p aber problemlos)
     - [ ] Overclocking probieren?
 - [ ] Temperaturanzeige und Spielübersicht alle 30 min neu laden
 - [ ] Meisterschaft mit Pyramide ab Mitte August ersetzen
 - [ ] uhrzeit() nicht in body-onload sondern dort wo die Uhrzeit angezeigt wird, analog zu vorstandsdienst()?
 - [ ] Anzeige, wie lange etwas noch zu sehen ist. Progress bar wie bei v1 oder progress circle.
-- [ ] Präsentationsmodus auf nur 1 Konfig-Datei umbauen
 - [ ] UV-Index einbinden?
 - [ ] Diashow-Modus für Bilder einbauen
 - [ ] Admin-Seite: HTML-Code-Struktur (rows, cols) verbessern/verschönern
@@ -56,8 +57,8 @@ Der Infoscreen läuft auf einem Raspberry Pi und einem vertikal montierten Bilds
 
 ### Raspi:
 
-- [ ] "Default Keyring"-Abfrage unterbinden
 - [ ] Statt das lange Kommando "chromium-browser..." an mehreren Stellen auszuführen, eine .sh-Datei erstellen und diese dann im crontab bzw. im Dekstop-Starter ausführen
 - [ ] Konfiguration erreichbar machen via Tailscale (nur für Marko?)
 - [ ] Webseite zwischen 22-08 Uhr geschlossen haben? (Oder ist das eh schon so?)
 - [ ] Automatische Platzbewässerung in der Nacht dazu machen?
+- [x] "Default Keyring"-Abfrage unterbinden (einfach bei der ersten Abfrage kein Passwort festlegen)
